@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="simple_dnn" desc="Accelerator SIMPLE_DNN" data_size="4" device_id="005" hls_tool="rtl">
+    <param name="num_hidden" desc="num_hidden" />
+    <param name="num_out" desc="num_out" />
+    <param name="num_in" desc="num_in" />
+  </accelerator>
+</sld>

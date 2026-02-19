@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="sha256" desc="Accelerator SHA256" data_size="4" device_id="007" hls_tool="rtl">
+    <param name="sha_mode" desc="sha_mode" />
+    <param name="sha_msg_size" desc="sha_msg_size" />
+  </accelerator>
+</sld>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="sobel_v2" desc="Accelerator SOBEL_V2" data_size="4" device_id="014" hls_tool="rtl">
+    <param name="height" desc="height" />
+    <param name="width" desc="width" />
+  </accelerator>
+</sld>

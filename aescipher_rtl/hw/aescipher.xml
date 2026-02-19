@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="aescipher" desc="Accelerator AESCIPHER" data_size="4" device_id="04a" hls_tool="rtl">
+    <param name="aes_num_blocks" desc="aes_num_blocks" />
+    <param name="aes_key_4" desc="aes_key_4" />
+    <param name="aes_key_5" desc="aes_key_5" />
+    <param name="aes_key_6" desc="aes_key_6" />
+    <param name="aes_key_7" desc="aes_key_7" />
+    <param name="aes_key_0" desc="aes_key_0" />
+    <param name="aes_key_1" desc="aes_key_1" />
+    <param name="aes_key_2" desc="aes_key_2" />
+    <param name="aes_key_3" desc="aes_key_3" />
+  </accelerator>
+</sld>

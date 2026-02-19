@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="fft_64" desc="Accelerator FFT_64" data_size="4" device_id="094" hls_tool="rtl">
+    <param name="fft_points" desc="fft_points" />
+  </accelerator>
+</sld>

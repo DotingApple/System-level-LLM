@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="fcdnn_acc" desc="Accelerator FCDNN_ACC" data_size="4" device_id="001" hls_tool="rtl">
+    <param name="runs" desc="runs" />
+    <param name="pipe_mode" desc="pipe_mode" />
+    <param name="exp_val" desc="exp_val" />
+    <param name="mux_cfg" desc="mux_cfg" />
+    <param name="array_size" desc="array_size" />
+  </accelerator>
+</sld>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="spmv" desc="Accelerator SPMV" data_size="4" device_id="0a1" hls_tool="rtl">
+    <param name="spmv_vec_len" desc="spmv_vec_len" />
+    <param name="spmv_nnz" desc="spmv_nnz" />
+  </accelerator>
+</sld>

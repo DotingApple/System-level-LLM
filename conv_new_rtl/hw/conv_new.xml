@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="conv_new" desc="Accelerator CONV_NEW" data_size="4" device_id="321" hls_tool="rtl">
+    <param name="param_width" desc="param_width" />
+    <param name="param_height" desc="param_height" />
+  </accelerator>
+</sld>
