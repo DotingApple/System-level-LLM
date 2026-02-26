@@ -8,7 +8,9 @@ module spmv_rtl_basic_dma64(
     acc_done, 
     debug, 
     dma_read_ctrl_valid, dma_read_ctrl_data_index, dma_read_ctrl_data_length, dma_read_ctrl_data_size, dma_read_ctrl_ready, 
+    dma_read_ctrl_data_user,
     dma_write_ctrl_valid, dma_write_ctrl_data_index, dma_write_ctrl_data_length, dma_write_ctrl_data_size, dma_write_ctrl_ready, 
+    dma_write_ctrl_data_user,
     dma_write_chnl_valid, dma_write_chnl_data, dma_write_chnl_ready
 );
 
@@ -25,16 +27,19 @@ module spmv_rtl_basic_dma64(
    output reg [31:0] dma_read_ctrl_data_index;
    output reg [31:0] dma_read_ctrl_data_length;
    output reg [2:0]  dma_read_ctrl_data_size;
+    output reg  [5:0]  dma_read_ctrl_data_user;
 
    output reg        dma_read_chnl_ready;
    input reg         dma_read_chnl_valid;
    input reg [63:0]  dma_read_chnl_data;
+
 
    input reg         dma_write_ctrl_ready;
    output reg        dma_write_ctrl_valid;
    output reg [31:0] dma_write_ctrl_data_index;
    output reg [31:0] dma_write_ctrl_data_length;
    output reg [2:0]  dma_write_ctrl_data_size;
+   output reg  [5:0]  dma_write_ctrl_data_user;
 
    input reg         dma_write_chnl_ready;
    output reg        dma_write_chnl_valid;
@@ -56,7 +61,8 @@ localparam NUM_VEC_VALS_PER_ADDR = 1;
 localparam BVB_AWIDTH = 8;
 
 
-
+   assign dma_read_ctrl_data_user  = 6'd0;
+   assign dma_write_ctrl_data_user = 6'd0;
 
 
    // Internal signals for spmv module

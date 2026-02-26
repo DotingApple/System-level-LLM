@@ -3,7 +3,6 @@ module aescipher_rtl_basic_dma64(
    input rst,  // ACTIVE-LOW
 
    /* <<--params-def-->> */
-   // The AES key is 256 bits (8×32 bits) so we split it into 8 configuration registers
    input [31:0]  conf_info_aes_key_3,
    input [31:0]  conf_info_aes_key_2,
    input [31:0]  conf_info_aes_key_1,
@@ -21,6 +20,7 @@ module aescipher_rtl_basic_dma64(
    output reg [31:0] dma_read_ctrl_data_index,
    output reg [31:0] dma_read_ctrl_data_length,
    output reg [2:0]  dma_read_ctrl_data_size,
+   output     [5:0]  dma_read_ctrl_data_user,
 
    // DMA read channel
    output reg    dma_read_chnl_ready,
@@ -33,6 +33,7 @@ module aescipher_rtl_basic_dma64(
    output reg [31:0] dma_write_ctrl_data_index,
    output reg [31:0] dma_write_ctrl_data_length,
    output reg [2:0]  dma_write_ctrl_data_size,
+   output     [5:0]  dma_write_ctrl_data_user,
 
    // DMA write channel
    input         dma_write_chnl_ready,
@@ -46,6 +47,9 @@ module aescipher_rtl_basic_dma64(
    // -----------------------------------------------------------------------
    // 1) Combine 8 words (256 bits) into the AES key
    // -----------------------------------------------------------------------
+   assign dma_read_ctrl_data_user  = 6'd0;
+   assign dma_write_ctrl_data_user = 6'd0;
+
    wire [255:0] aes_key = {
        conf_info_aes_key_0,
        conf_info_aes_key_1,
@@ -133,15 +137,14 @@ module aescipher_rtl_basic_dma64(
            // STATE_IDLE
            //---------------------------------------------------------------
            STATE_IDLE: begin
-               dma_read_ctrl_data_index   <= 32'd0;
-               dma_read_ctrl_data_length  <= 32'd2;  // 2 beats
-               dma_read_ctrl_data_size    <= 3'b011; // 64-bit
               if (acc_done) acc_done <= 1'b0;
 
               if (conf_done && total_blocks != 0) begin
                  block_count                <= 32'd0;
                  // request read of 2 beats => 128 bits
-
+                 dma_read_ctrl_data_index   <= 32'd0;
+                 dma_read_ctrl_data_length  <= 32'd2;  // 2 beats
+                 dma_read_ctrl_data_size    <= 3'b011; // 64-bit
                  dma_read_ctrl_valid        <= 1'b1;
 
                  if (dma_read_ctrl_ready) begin
@@ -212,7 +215,7 @@ module aescipher_rtl_basic_dma64(
            // STATE_WRITE_CTRL: request to write 2 beats
            //---------------------------------------------------------------
            STATE_WRITE_CTRL: begin
-              dma_write_ctrl_data_index  <= 2; // 2 beats per block
+              dma_write_ctrl_data_index  <= (block_count << 1);
               dma_write_ctrl_data_length <= 32'd2;
               dma_write_ctrl_data_size   <= 3'b011;
               dma_write_ctrl_valid       <= 1'b1;

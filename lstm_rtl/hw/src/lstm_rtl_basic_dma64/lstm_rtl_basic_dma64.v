@@ -23,6 +23,7 @@ module lstm_rtl_basic_dma64
     output reg  [31:0]  dma_read_ctrl_data_index,
     output reg  [31:0]  dma_read_ctrl_data_length,
     output reg  [2:0]   dma_read_ctrl_data_size,
+    output     [5:0]  dma_read_ctrl_data_user,
     output wire         dma_read_chnl_ready,
     input  wire         dma_read_chnl_valid,
     input  wire [63:0]  dma_read_chnl_data,
@@ -31,13 +32,15 @@ module lstm_rtl_basic_dma64
     output reg  [31:0]  dma_write_ctrl_data_index,
     output reg  [31:0]  dma_write_ctrl_data_length,
     output reg  [2:0]   dma_write_ctrl_data_size,
+    output     [5:0]  dma_write_ctrl_data_user,
     input  wire         dma_write_chnl_ready,
     output reg          dma_write_chnl_valid,
     output reg  [63:0]  dma_write_chnl_data,
     output reg          acc_done,
     output reg  [31:0]  debug
 );
-
+assign dma_read_ctrl_data_user  = 6'd0;
+assign dma_write_ctrl_data_user = 6'd0;
 // Constant parameters
 localparam BEATS_U     = (`uarraysize >> 6);            // 16
 localparam BEATS_V     = (`varraysize >> 6);            // 25

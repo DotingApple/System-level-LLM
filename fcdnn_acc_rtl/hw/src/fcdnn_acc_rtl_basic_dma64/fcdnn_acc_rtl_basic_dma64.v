@@ -4,50 +4,45 @@
 // ============================================================================
 
 module fcdnn_acc_rtl_basic_dma64 (
-    // ───────────── Global ─────────────
+
     input  wire        clk,
     input  wire        rst,
 
-    // ─────────── Configuration ─────────
-    input  wire [31:0] conf_info_array_size,   // beats to read / write (unused)
+    input  wire [31:0] conf_info_array_size,   
     input  wire [31:0] conf_info_mux_cfg,
     input  wire [31:0] conf_info_exp_val,
-    input  wire [31:0] conf_info_pipe_mode,    // reserved
-    input  wire [31:0] conf_info_runs,         // reserved
+    input  wire [31:0] conf_info_pipe_mode,    
+    input  wire [31:0] conf_info_runs,         
     input  wire        conf_done,
 
-    // ───── Accelerator status ─────
     output reg         acc_done,
     output reg [31:0]  debug,
 
-    // ─────────── DMA read control ───────────
     output reg         dma_read_ctrl_valid,
     output reg [31:0]  dma_read_ctrl_data_index,
     output reg [31:0]  dma_read_ctrl_data_length,
     output reg [2:0]   dma_read_ctrl_data_size,
     input  wire        dma_read_ctrl_ready,
+    output     [5:0]  dma_read_ctrl_data_user,
 
-    // ─────────── DMA read channel ───────────
     input  wire        dma_read_chnl_valid,
     input  wire [63:0] dma_read_chnl_data,
     output reg         dma_read_chnl_ready,
 
-    // ─────────── DMA write control ──────────
     output reg         dma_write_ctrl_valid,
     output reg [31:0]  dma_write_ctrl_data_index,
     output reg [31:0]  dma_write_ctrl_data_length,
     output reg [2:0]   dma_write_ctrl_data_size,
     input  wire        dma_write_ctrl_ready,
+    output     [5:0]  dma_write_ctrl_data_user,
 
-    // ─────────── DMA write channel ──────────
     output reg         dma_write_chnl_valid,
     output reg [63:0]  dma_write_chnl_data,
     input  wire        dma_write_chnl_ready
 );
+   assign dma_read_ctrl_data_user  = 6'd0;
+   assign dma_write_ctrl_data_user = 6'd0;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// FSM state encoding
-// ─────────────────────────────────────────────────────────────────────────────
 typedef enum logic [2:0] {
     STATE_IDLE    = 3'd0,
     STATE_RD_CTRL = 3'd1,
@@ -59,9 +54,6 @@ typedef enum logic [2:0] {
 
 state_t state;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Parameters / counters
-// ─────────────────────────────────────────────────────────────────────────────
 localparam int NUM_BEATS_RD = 28;   // 28 × 64  = 1792 bits  (inputs)
 localparam int NUM_BEATS_WR = 15;   // 15 × 64  =  960 bits  (outputs)
 localparam int MAX_BEATS    = 1024;
@@ -69,14 +61,9 @@ localparam int MAX_BEATS    = 1024;
 reg             configured;
 reg  [31:0]     beat_ctr;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// DMA input buffer (large generic RAM, only 28 entries actually used)
-// ─────────────────────────────────────────────────────────────────────────────
 reg [63:0] input_buf [0:MAX_BEATS-1];
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  Signals to / from Core
-// ─────────────────────────────────────────────────────────────────────────────
+
 wire [26:0]  core_mul_in_1_single;
 wire [431:0] core_mul_in_1_pack, core_mul_in_2_pack;
 wire [431:0] core_add_in_1_pack, core_add_in_2_pack;
@@ -95,21 +82,18 @@ wire         core_sigmoid_output_mux_sel;
 wire [431:0] core_mul_out_pack, core_add_out_pack;
 wire [26:0]  core_add_out_single, core_sigmoid;
 
-// handshake
+
 reg  core_in_valid_r;
 wire core_in_valid  = core_in_valid_r;
 wire core_out_valid;
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  Core instantiation
-// ─────────────────────────────────────────────────────────────────────────────
 Core core_inst (
     .clk_pll                     (clk),
 
     .in_valid                    (core_in_valid),
     .out_valid                   (core_out_valid),
 
-    // ─── Data inputs ───
+    
     .mul_in_1_single             (core_mul_in_1_single),
     .mul_in_1_pack               (core_mul_in_1_pack),
     .mul_in_2_pack               (core_mul_in_2_pack),
@@ -118,7 +102,7 @@ Core core_inst (
     .add_in_2_single             (core_add_in_2_single),
     .exp                         (core_exp),
 
-    // ─── Control inputs ───
+   
     .mul_in_1_mux_sel_left       (core_mul_in_1_mux_sel_left),
     .mul_in_1_mux_sel_right      (core_mul_in_1_mux_sel_right),
     .mul_in_2_mux_sel            (core_mul_in_2_mux_sel),
@@ -130,16 +114,14 @@ Core core_inst (
     .add_in_2_mid_mux_sel        (core_add_in_2_mid_mux_sel),
     .sigmoid_output_mux_sel      (core_sigmoid_output_mux_sel),
 
-    // ─── Outputs ───
+    
     .mul_out_pack                (core_mul_out_pack),
     .add_out_pack                (core_add_out_pack),
     .add_out_single              (core_add_out_single),
     .sigmoid                     (core_sigmoid)
 );
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Unpack DMA **read** payload into Core ports
-// ─────────────────────────────────────────────────────────────────────────────
+
 wire [1791:0] raw_input_data = { 
     input_buf[0],  input_buf[1],  input_buf[2],  input_buf[3],
     input_buf[4],  input_buf[5],  input_buf[6],  input_buf[7],
@@ -158,9 +140,7 @@ assign core_add_in_2_pack   = raw_input_data[468 :37  ];
 assign core_add_in_2_single = raw_input_data[36  :10  ];
 assign core_exp             = raw_input_data[9   :2   ];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Control-field pass-through
-// ─────────────────────────────────────────────────────────────────────────────
+
 assign core_mul_in_1_mux_sel_left         = conf_info_mux_cfg[1:0];
 assign core_mul_in_1_mux_sel_right        = conf_info_mux_cfg[3:2];
 assign core_mul_in_2_mux_sel              = conf_info_mux_cfg[5:4];
@@ -172,9 +152,7 @@ assign core_add_in_2_mux_sel              = conf_info_mux_cfg[13:12];
 assign core_add_in_2_mid_mux_sel          = conf_info_mux_cfg[15:14];
 assign core_sigmoid_output_mux_sel        = conf_info_mux_cfg[16];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Pack Core outputs into 15×64-bit DMA beats   (little-endian order)
-// ─────────────────────────────────────────────────────────────────────────────
+
 wire [959:0] raw_output_data = {
     core_mul_out_pack,
     core_add_out_pack,
@@ -192,9 +170,6 @@ generate
     end
 endgenerate
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Main FSM
-// ─────────────────────────────────────────────────────────────────────────────
 always @(posedge clk or negedge rst) begin
     if (!rst) begin
         state       <= STATE_IDLE;
@@ -223,7 +198,7 @@ always @(posedge clk or negedge rst) begin
         core_in_valid_r <= 1'b0;
 
         case (state)
-        // ────────────────────────────────────────────────────────────────
+      
         STATE_IDLE: begin
             acc_done <= 1'b0;
             dma_read_ctrl_valid  <= 1'b0;
@@ -238,7 +213,7 @@ always @(posedge clk or negedge rst) begin
                                                   : STATE_RD_CTRL;
             end
         end
-        // ────────────────────────────────────────────────────────────────
+       
         STATE_RD_CTRL: begin
             dma_read_ctrl_valid       <= 1'b1;
             dma_read_ctrl_data_index  <= 32'd0;
@@ -251,7 +226,7 @@ always @(posedge clk or negedge rst) begin
                 state               <= STATE_RD_DATA;
             end
         end
-        // ────────────────────────────────────────────────────────────────
+        
         STATE_RD_DATA: begin
             dma_read_chnl_ready <= 1'b1;
             if (dma_read_chnl_valid) begin
@@ -265,11 +240,11 @@ always @(posedge clk or negedge rst) begin
                 end
             end
         end
-        // ────────────────────────────────────────────────────────────────
+        
         STATE_COMPUTE: begin
             acc_done <= 1'b0;
 
-            // fire a *one-cycle* in_valid when we enter COMPUTE
+            
             if (beat_ctr == 0) core_in_valid_r <= 1'b1;
             beat_ctr <= beat_ctr + 1;
 
@@ -278,7 +253,7 @@ always @(posedge clk or negedge rst) begin
                 beat_ctr <= 32'd0;
             end
         end
-        // ────────────────────────────────────────────────────────────────
+        
         STATE_WR_CTRL: begin
             dma_write_ctrl_valid       <= 1'b1;
             dma_write_ctrl_data_index  <= 32'd0;
@@ -308,7 +283,7 @@ always @(posedge clk or negedge rst) begin
                 end
             end
         end
-        // ────────────────────────────────────────────────────────────────
+       
         default: state <= STATE_IDLE;
         endcase
     end

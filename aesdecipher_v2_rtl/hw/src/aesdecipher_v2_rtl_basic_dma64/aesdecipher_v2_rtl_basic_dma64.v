@@ -19,6 +19,7 @@ module aesdecipher_v2_rtl_basic_dma64(
    output reg [31:0] dma_read_ctrl_data_index,
    output reg [31:0] dma_read_ctrl_data_length,
    output reg [2:0]  dma_read_ctrl_data_size,
+   output     [5:0]  dma_read_ctrl_data_user,
 
    output reg	 dma_read_chnl_ready,
    input 	 dma_read_chnl_valid,
@@ -39,7 +40,8 @@ module aesdecipher_v2_rtl_basic_dma64(
 );
     
 
-
+   assign dma_read_ctrl_data_user  = 6'd0;
+   assign dma_write_ctrl_data_user = 6'd0;
    // -----------------------------------------------------------------------
    // 1) Combine 8 words (256 bits) into the AES key
    // -----------------------------------------------------------------------
@@ -209,7 +211,7 @@ module aesdecipher_v2_rtl_basic_dma64(
            // STATE_WRITE_CTRL: request to write 2 beats
            //---------------------------------------------------------------
            STATE_WRITE_CTRL: begin
-              dma_write_ctrl_data_index  <= 2;
+              dma_write_ctrl_data_index  <= (block_count << 1);
               dma_write_ctrl_data_length <= 32'd2;
               dma_write_ctrl_data_size   <= 3'b011;
               dma_write_ctrl_valid       <= 1'b1;

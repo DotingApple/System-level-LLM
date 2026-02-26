@@ -10,8 +10,10 @@ module fft_64_rtl_basic_dma64(
     debug, 
     dma_read_ctrl_valid, dma_read_ctrl_data_index,
     dma_read_ctrl_data_length, dma_read_ctrl_data_size, dma_read_ctrl_ready,
+    dma_read_ctrl_data_user,
     dma_write_ctrl_valid, dma_write_ctrl_data_index,
     dma_write_ctrl_data_length, dma_write_ctrl_data_size, dma_write_ctrl_ready,
+    dma_write_ctrl_data_user,
     dma_write_chnl_valid, dma_write_chnl_data, dma_write_chnl_ready
 );
 
@@ -26,6 +28,7 @@ module fft_64_rtl_basic_dma64(
     output reg [31:0]  dma_read_ctrl_data_index;
     output reg [31:0]  dma_read_ctrl_data_length;
     output reg [2:0]   dma_read_ctrl_data_size;
+    output     [5:0]  dma_read_ctrl_data_user;
     
     output reg         dma_read_chnl_ready;
     input              dma_read_chnl_valid;
@@ -36,6 +39,7 @@ module fft_64_rtl_basic_dma64(
     output reg [31:0]  dma_write_ctrl_data_index;
     output reg [31:0]  dma_write_ctrl_data_length;
     output reg [2:0]   dma_write_ctrl_data_size;
+    output     [5:0]  dma_write_ctrl_data_user;
     
     input              dma_write_chnl_ready;
     output reg         dma_write_chnl_valid;
@@ -43,10 +47,9 @@ module fft_64_rtl_basic_dma64(
     
     output reg         acc_done;
     output reg [31:0]  debug;
-    
-    //-------------------------------------------------------------------------
-    // Parameters and internal signal declarations
-    //-------------------------------------------------------------------------
+    assign dma_read_ctrl_data_user  = 6'd0;
+    assign dma_write_ctrl_data_user = 6'd0;
+    // DMA States
     localparam STATE_IDLE       = 3'd0;
     localparam STATE_READ_CTRL  = 3'd1;
     localparam STATE_READ_DATA  = 3'd2;
@@ -54,7 +57,7 @@ module fft_64_rtl_basic_dma64(
     localparam STATE_WRITE_CTRL = 3'd4;
     localparam STATE_WRITE_DATA = 3'd5;
     
-    // Example parameter values (tune as required)
+    // Parameter values
     localparam PROG_NUM_INSTR_BEATS = 16;  
     localparam BEATS_PER_PASS       = 64;
     localparam VALS_PER_BEAT        = 1;
@@ -187,7 +190,7 @@ module fft_64_rtl_basic_dma64(
                  dma_read_ctrl_valid <= 1; // Initiate DMA read control request.
                  dma_read_ctrl_data_index  <= 32'd0;
                  dma_read_ctrl_data_length <= 32'd64;
-                 dma_read_ctrl_data_size   <= 3'd3;
+                 dma_read_ctrl_data_size   <= 3'd2;
                  beat_ctr <= 0;
                  state <= STATE_READ_CTRL;
               end
@@ -219,9 +222,9 @@ module fft_64_rtl_basic_dma64(
            end
            STATE_WRITE_CTRL: begin
               dma_write_ctrl_valid <= 1;
-              dma_write_ctrl_data_index  <= 32'd64;
+              dma_write_ctrl_data_index  <= 32'd0;
               dma_write_ctrl_data_length <= 32'd64;
-              dma_write_ctrl_data_size   <= 3'd3;
+              dma_write_ctrl_data_size   <= 3'd2;
               if (dma_write_ctrl_ready) begin
                  dma_write_ctrl_valid <= 0;
                  beat_ctr <= 0;

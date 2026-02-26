@@ -208,7 +208,7 @@ int main(int argc, char * argv[])
                 printf("    in0 = 0x%016lx\n", (unsigned long) in0);
                 printf("    in1 = 0x%016lx\n", (unsigned long) in1);
             }
-			iowrite32(dev, SELECT_REG, ioread32(dev, DEVID_REG));
+			// iowrite32(dev, SELECT_REG, ioread32(dev, DEVID_REG));
 			iowrite32(dev, COHERENCE_REG, coherence);
 
 #ifndef __sparc

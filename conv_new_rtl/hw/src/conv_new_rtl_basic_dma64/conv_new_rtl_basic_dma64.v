@@ -1,60 +1,53 @@
-// ==============================================================
-//  conv_new_rtl_basic_dma64   (two-pixels / 64-bit READ; 1-pixel WRITE)
-//  --------------------------------------------------------------
-//  • READ side: 2 048 beats × 64-bit  = 16 kB   (pixel-even / pixel-odd)
-//  • WRITE side: 4 096 beats × 64-bit = 16 kB   (one 20-bit word per beat)
-//  • Stuck-at-state-4 bug fixed:
-//      – correct byte count in WRITE-command
-// ==============================================================
 
 module conv_new_rtl_basic_dma64
 #(
     parameter IMG_PIXELS  = 4096,   // pixels per pass  (64 × 64)
     parameter MAP_WORDS   = 4096,   // words in each convolution map
-    parameter FIFO_DEPTH  = 8       // write-side skid FIFO
+    parameter FIFO_DEPTH  = 8       
 )
 (
-    // ─── global ────────────────────────────────────────────────
+
     input  wire         clk,
     input  wire         rst,                // active-low
 
-    // ─── DMA READ : DRAM → accelerator ────────────────────────
     input  wire         dma_read_ctrl_ready,
     output reg          dma_read_ctrl_valid,
     output reg  [31:0]  dma_read_ctrl_data_index,
     output reg  [31:0]  dma_read_ctrl_data_length,
     output reg  [2:0]   dma_read_ctrl_data_size,
+    output     [5:0]  dma_read_ctrl_data_user,
 
     input  wire         dma_read_chnl_valid,
     input  wire [63:0]  dma_read_chnl_data,
     output reg          dma_read_chnl_ready,
 
-    // ─── DMA WRITE : accelerator → DRAM ───────────────────────
     input  wire         dma_write_ctrl_ready,
     output reg          dma_write_ctrl_valid,
     output reg  [31:0]  dma_write_ctrl_data_index,
     output reg  [31:0]  dma_write_ctrl_data_length,
     output reg  [2:0]   dma_write_ctrl_data_size,
+    output     [5:0]  dma_write_ctrl_data_user,
 
     input  wire         dma_write_chnl_ready,
     output reg          dma_write_chnl_valid,
     output reg  [63:0]  dma_write_chnl_data,
 
-    // ─── configuration / status ───────────────────────────────
-    input  wire [31:0]  conf_info_param_height, // unused – kept for ESP
-    input  wire [31:0]  conf_info_param_width,  // unused – kept for ESP
+
+    input  wire [31:0]  conf_info_param_height, // unused
+    input  wire [31:0]  conf_info_param_width,  // unused
     input  wire         conf_done,
     output reg          acc_done,
     output reg  [31:0]  debug
 );
 
-    // ─────────── byte addresses in DRAM ───────────────────────
+    assign dma_read_ctrl_data_user  = 6'd0;
+    assign dma_write_ctrl_data_user = 6'd0;
     localparam IMG_BASE   = 32'h0000_0000;
     localparam MAP0_BASE  = 32'h0000_0000;                  // kernel-0
     localparam MAP1_BASE  = 32'h0000_4000;                  // kernel-1  (+16 kB)
-    localparam MAP_BYTES  = MAP_WORDS * 4;                  // *** FIX ***
+    localparam MAP_BYTES  = MAP_WORDS * 4;                  
 
-    // ─────────── internal regs / wires ────────────────────────
+
     reg  [2:0]  state;
     reg  [12:0] pix_ctr;          // 0 … 4095 (pixels  OR write-beats)
     reg         pass_cnt;         // 0 = kernel-0, 1 = kernel-1
@@ -72,11 +65,9 @@ module conv_new_rtl_basic_dma64
     wire [2:0]  conv_csel;
     wire        conv_busy;
 
-    // ─── tiny FIFO for write channel ──────────────────────────
     reg  [FIFO_DEPTH-1:0]          fifo_val;
     reg  [63:0]                    fifo_dat [0:FIFO_DEPTH-1];
 
-    // ─── accelerator instance (unchanged) ─────────────────────
     conv_new u_conv_new (
         .clk      (clk),
         .reset    (~rst),
@@ -90,7 +81,6 @@ module conv_new_rtl_basic_dma64
         .caddr_wr (), .csel     (conv_csel)
     );
 
-    // ─── FSM encoding ─────────────────────────────────────────
     localparam  S_IDLE      = 3'd0,
                 S_RD_CMD    = 3'd1,
                 S_RD_DATA   = 3'd2,
@@ -98,7 +88,7 @@ module conv_new_rtl_basic_dma64
                 S_WR_CMD    = 3'd4,
                 S_WR_DATA   = 3'd5;
 
-    // ─── sequential logic ─────────────────────────────────────
+
     integer i;
     always @(posedge clk or negedge rst) begin
         if (!rst) begin
@@ -120,9 +110,8 @@ module conv_new_rtl_basic_dma64
             dma_write_chnl_valid<= 0;
             dma_read_chnl_ready <= 0;
 
-            //------------------------------------------------------------------
             case (state)
-            //------------------------------------------------------------------
+            
             S_IDLE: begin
                 acc_done <= 0;
                 if (conf_done) begin
@@ -134,7 +123,7 @@ module conv_new_rtl_basic_dma64
                     state <= S_RD_CMD;
                 end
             end
-            //------------------------------------------------------------------
+            
             S_RD_CMD: begin
                 if (dma_read_ctrl_ready) begin
                     dma_read_ctrl_valid <= 0;
@@ -143,9 +132,7 @@ module conv_new_rtl_basic_dma64
                     state     <= S_RD_DATA;
                 end
             end
-            //------------------------------------------------------------------
-            //  Two-pixel unpacker
-            //------------------------------------------------------------------
+
             S_RD_DATA: begin
                 dma_read_chnl_ready <= (pix_phase == 0);
 
@@ -171,12 +158,12 @@ module conv_new_rtl_basic_dma64
                     dma_write_ctrl_valid       <= 1'b1;
                     dma_write_ctrl_data_index  <= pass_cnt ? MAP1_BASE
                                                            : MAP0_BASE;
-                    dma_write_ctrl_data_length <= MAP_BYTES;   // *** FIX ***
-                    dma_write_ctrl_data_size   <= 3'd2;        // 32-bit word
+                    dma_write_ctrl_data_length <= MAP_BYTES;   
+                    dma_write_ctrl_data_size   <= 3'd2;        
                     state <= S_WR_CMD;
                 end
             end
-            //------------------------------------------------------------------
+       
             S_WR_CMD: begin
                 if (dma_write_ctrl_ready) begin
                     dma_write_ctrl_valid <= 0;
@@ -185,9 +172,7 @@ module conv_new_rtl_basic_dma64
                     state                <= S_WR_DATA;
                 end
             end
-            //------------------------------------------------------------------
-            //  WRITE path with FIFO  (unchanged)
-            //------------------------------------------------------------------
+
             S_WR_DATA: begin
                 if (conv_cwr && (conv_csel == (3'd1 + pass_cnt))) begin
                     for (i = 0; i < FIFO_DEPTH; i = i + 1)
@@ -229,7 +214,7 @@ module conv_new_rtl_basic_dma64
                     end
                 end
             end
-            //------------------------------------------------------------------
+            
             default: state <= S_IDLE;
             endcase
 

@@ -1,9 +1,3 @@
-// ============================================================================
-//  simple_dnn_rtl_basic_dma64  – **single-driver clean-up**
-//     • One procedural driver per reg (MDRV-safe)
-//     • Active-LOW asynchronous reset (negedge rst)
-//     • dnn_soc reset port fixed
-// ============================================================================
 
 module simple_dnn_rtl_basic_dma64 (
     clk, rst,
@@ -15,62 +9,64 @@ module simple_dnn_rtl_basic_dma64 (
     // DMA read ctrl
     dma_read_ctrl_valid,  dma_read_ctrl_data_index,
     dma_read_ctrl_data_length, dma_read_ctrl_data_size, dma_read_ctrl_ready,
+    dma_read_ctrl_data_user,
     // DMA write ctrl
     dma_write_ctrl_valid, dma_write_ctrl_data_index,
     dma_write_ctrl_data_length, dma_write_ctrl_data_size, dma_write_ctrl_ready,
+        dma_write_ctrl_data_user,
     // DMA write channel
     dma_write_chnl_valid, dma_write_chnl_data, dma_write_chnl_ready
 );
-    // ── clock / reset ───────────────────────────────────────────────────────
+
     input  wire        clk;
     input  wire        rst;                     // active-LOW async reset
 
-    // ── configuration ───────────────────────────────────────────────────────
     input  wire [31:0] conf_info_num_in;
     input  wire [31:0] conf_info_num_out;
     input  wire [31:0] conf_info_num_hidden;
     input  wire        conf_done;
 
-    // ── DMA READ control ────────────────────────────────────────────────────
     input  wire        dma_read_ctrl_ready;
     output reg         dma_read_ctrl_valid;
     output reg  [31:0] dma_read_ctrl_data_index;
     output reg  [31:0] dma_read_ctrl_data_length;
     output reg  [2:0]  dma_read_ctrl_data_size;
+    output reg  [5:0]  dma_read_ctrl_data_user;
 
-    // ── DMA READ channel ────────────────────────────────────────────────────
+    
     output reg         dma_read_chnl_ready;
     input  wire        dma_read_chnl_valid;
     input  wire [63:0] dma_read_chnl_data;
 
-    // ── DMA WRITE control ───────────────────────────────────────────────────
+    
     input  wire        dma_write_ctrl_ready;
     output reg         dma_write_ctrl_valid;
     output reg  [31:0] dma_write_ctrl_data_index;
     output reg  [31:0] dma_write_ctrl_data_length;
     output reg  [2:0]  dma_write_ctrl_data_size;
+    output reg  [5:0]  dma_write_ctrl_data_user;
 
-    // ── DMA WRITE channel ───────────────────────────────────────────────────
+   
     input  wire        dma_write_chnl_ready;
     output reg         dma_write_chnl_valid;
     output reg  [63:0] dma_write_chnl_data;
 
-    // ── status/debug ────────────────────────────────────────────────────────
+    
     output reg         acc_done;
     output reg  [31:0] debug;
 
-    // ── internal registers for triple-word input packing ────────────────────
+    
     reg [31:0] dnn_in0_reg, dnn_in1_reg, dnn_in2_reg;
     reg        dnn_in_valid_reg;
 
-    // ── accelerator outputs ────────────────────────────────────────────────
+    
     wire signed [31:0] dnn_data_out;
     wire               dnn_data_out_en;
 
-    // ── accelerator instance ───────────────────────────────────────────────
+    
     dnn_soc u_dnn_soc (
         .clk       (clk),
-        .rst_n     (rst),             // fixed: true reset, active-LOW
+        .rst_n     (rst),             
         .data_in_0 (dnn_in0_reg),
         .data_in_1 (dnn_in1_reg),
         .data_in_2 (dnn_in2_reg),
@@ -78,7 +74,7 @@ module simple_dnn_rtl_basic_dma64 (
         .data_out_en(dnn_data_out_en)
     );
 
-    // ── FSM state definitions ──────────────────────────────────────────────
+    
     localparam STATE_IDLE    = 3'd0,
                STATE_RD_CTRL = 3'd1,
                STATE_RD_CHNL = 3'd2,
@@ -93,7 +89,8 @@ module simple_dnn_rtl_basic_dma64 (
     reg         half_flag;
     reg  [63:0] stored_dma_data;
 
-    // ── main FSM with single-driver policy ─────────────────────────────────
+    assign dma_read_ctrl_data_user  = 6'd0;
+    assign dma_write_ctrl_data_user = 6'd0;
     always @(posedge clk or negedge rst) begin
         if (!rst) begin
             // ---------- asynchronous reset ----------
@@ -123,7 +120,7 @@ module simple_dnn_rtl_basic_dma64 (
 
             // ---------- FSM ----------
             case (state)
-                // ──────────────────────────────────────────────────────────
+               
                 STATE_IDLE: begin
                     dma_beat_count <= 0;
                     half_flag      <= 1'b0;
@@ -135,7 +132,7 @@ module simple_dnn_rtl_basic_dma64 (
                     end
                 end
 
-                // ──────────────────────────────────────────────────────────
+               
                 STATE_RD_CTRL: begin
                     dma_read_ctrl_valid      <= 1'b1;
                     dma_read_ctrl_data_index <= 0;
@@ -148,7 +145,7 @@ module simple_dnn_rtl_basic_dma64 (
                     end
                 end
 
-                // ──────────────────────────────────────────────────────────
+                
                 STATE_RD_CHNL: begin
                     dma_read_chnl_ready <= 1'b1;
                     if (dma_read_chnl_valid) begin
@@ -176,7 +173,7 @@ module simple_dnn_rtl_basic_dma64 (
                     end
                 end
 
-                // ──────────────────────────────────────────────────────────
+                
                 STATE_RD_DONE: begin
                     dma_read_chnl_ready <= 1'b1;
                     if (dma_read_chnl_valid) begin
@@ -199,7 +196,7 @@ module simple_dnn_rtl_basic_dma64 (
                     end
                 end
 
-                // ──────────────────────────────────────────────────────────
+                
                 STATE_WR_CTRL: begin
                     dma_write_ctrl_valid      <= 1'b1;
                     dma_write_ctrl_data_index <= 0;
@@ -211,7 +208,7 @@ module simple_dnn_rtl_basic_dma64 (
                     end
                 end
 
-                // ──────────────────────────────────────────────────────────
+               
                 STATE_WR_DATA: begin
                     dma_write_chnl_valid <= dnn_data_out_en;
                     dma_write_chnl_data  <= {32'd0, dnn_data_out};

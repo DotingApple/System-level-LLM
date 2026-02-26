@@ -258,7 +258,7 @@ int main(int argc, char *argv[])
 
             compute_y(y);
 
-            iowrite32(dev, SELECT_REG, ioread32(dev, DEVID_REG));
+            // iowrite32(dev, SELECT_REG, ioread32(dev, DEVID_REG));
             iowrite32(dev, COHERENCE_REG, coherence);
 #ifndef __sparc
             iowrite32(dev, PT_ADDRESS_REG, (unsigned long long)ptable);
