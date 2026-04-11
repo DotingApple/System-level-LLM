@@ -1,0 +1,30 @@
+[2026-04-08 00:01:12] START baseline accelerator=aescipher_rtl
+[2026-04-08 00:01:12] START esp-config: make esp-config
+[2026-04-08 00:01:12] [esp-config] Exported Cadence environment
+[2026-04-08 00:01:12] [esp-config] Exported Xilinx environment
+[2026-04-08 00:01:12] [esp-config] Exported Mentor environment
+[2026-04-08 00:01:12] [esp-config] Default Synopsys DC environment set
+[2026-04-08 00:01:12] [esp-config] Exported proFPGA v. 2021A environment
+[2026-04-08 00:01:12] [esp-config] Exported Leon3 tool-chain environment
+[2026-04-08 00:01:12] [esp-config] Exported RISCV tool-chain environment
+[2026-04-08 00:01:13] [esp-config]     DIFF checking .esp_config...
+[2026-04-08 00:01:13] [esp-config]     INFO Using custom configuration found in ".esp_config" for ESP
+[2026-04-08 00:01:13] [esp-config] 
+[2026-04-08 00:01:13] [esp-config] Generating ESP configuration...
+[2026-04-08 00:01:16] [esp-config] TILE_0_0 = 0 mem mem
+[2026-04-08 00:01:16] [esp-config] TILE_0_1 = 1 cpu cpu
+[2026-04-08 00:01:16] [esp-config] TILE_1_0 = 2 acc AESCIPHER_RTL basic_dma64 0 0 sld
+[2026-04-08 00:01:16] [esp-config] TILE_1_1 = 3 misc IO
+[2026-04-08 00:01:16] [esp-config] Created global constants definition into 'esp_global.vhd'
+[2026-04-08 00:01:16] [esp-config] Created global verilog constants into 'esp_global.svh'
+[2026-04-08 00:01:16] [esp-config] Created configuration into 'socmap.vhd'
+[2026-04-08 00:01:16] [esp-config] Created ESPLink header into 'esplink.h'
+[2026-04-08 00:01:16] [esp-config] Created kernel module load script into 'S64esp'
+[2026-04-08 00:01:16] [esp-config] Created soc defines into 'soc_defs.h'
+[2026-04-08 00:01:16] [esp-config] Created soc locations into 'soc_locs.h'
+[2026-04-08 00:01:16] [esp-config] Created device-tree into 'riscv.dts'
+[2026-04-08 00:01:16] [esp-config] Created RTL caches configuration into 'cache_cfg.svh'
+[2026-04-08 00:01:16] [esp-config] Created configuration into 'mmi64_regs.h'
+[2026-04-08 00:01:16] [esp-config] /usr/bin/xvfb-run: line 186: kill: (706) - No such process
+[2026-04-08 00:01:16] [esp-config] make: *** [/home/cz2931/esp/utils/make/esp.mk:28: socgen/esp/socmap.vhd] Error 1
+[2026-04-08 00:01:16] FAIL esp-config: Command '['/bin/bash', '-lc', 'source /opt/cad/scripts/tools_env.sh && make esp-config']' returned non-zero exit status 2.

@@ -1,0 +1,6 @@
+model: gemini-3-pro-preview
+temperature: 1
+response_format: structured_json
+api_key_env: GEMINI_API_KEY
+api_base: https://generativelanguage.googleapis.com/v1beta
+timeout_seconds: 180

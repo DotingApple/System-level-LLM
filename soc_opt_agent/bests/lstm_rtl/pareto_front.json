@@ -1,0 +1,32 @@
+[
+  {
+    "cycles": 8015,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/baselines/lstm_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/lstm_rtl"
+  },
+  {
+    "cycles": 8015,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_015950_lstm_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_015950_lstm_rtl"
+  },
+  {
+    "cycles": 8015,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_025727_lstm_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_025727_lstm_rtl"
+  },
+  {
+    "cycles": 8015,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_034754_lstm_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_034754_lstm_rtl"
+  },
+  {
+    "cycles": 8015,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_043818_lstm_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_043818_lstm_rtl"
+  }
+]

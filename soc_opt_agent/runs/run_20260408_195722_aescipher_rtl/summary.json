@@ -1,0 +1,14 @@
+{
+  "accelerator_name": "aescipher_rtl",
+  "benchmark_exe": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/aescipher_rtl.exe",
+  "failure_reason": "candidate execution failed; restored previous runnable state",
+  "mode": "candidate",
+  "proposal": {
+    "changes": {
+      "CONFIG_CPU_CACHES": "64 2 128 4"
+    },
+    "rationale": "Pursuing area/resource relief. Previous attempts to reduce resources by shrinking accelerator caches, SLM, and moderately reducing CPU caches did not lower the 18.2% BRAM or 43.98% LUT utilization. Boldly shrinking the CPU caches to 64 sets (L1) and 128 sets (L2) aims to aggressively cut into the remaining area usage, testing the hypothesis that the CPU caches are the primary area bottleneck.",
+    "search_intent": "Aggressively shrink CPU caches to reduce BRAM and LUT utilization."
+  },
+  "status": "failed"
+}

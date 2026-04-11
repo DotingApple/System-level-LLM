@@ -1,0 +1,21 @@
+{
+  "accelerator_invocations": 1,
+  "accelerator_mem_cycles": 34,
+  "accelerator_tlb_loading_cycles": 21,
+  "accelerator_total_cycles": 63,
+  "bram_utilization": 18.2,
+  "coherence_forwards_from_llc": 0,
+  "coherence_requests_to_llc": 178,
+  "coherence_responses_received_by_llc": 0,
+  "coherence_responses_sent_by_llc": 360,
+  "coherent_dma_requests_to_llc": 0,
+  "coherent_dma_responses_from_llc": 0,
+  "dma_requests_to_mem": 11,
+  "dma_responses_from_mem": 5,
+  "dsp_utilization": 0.96,
+  "ff_utilization": 18.37,
+  "lut_utilization": 158.96,
+  "offchip_memory_accesses": 184,
+  "passed": true,
+  "resource_score": 49.1225
+}

@@ -1,0 +1,11 @@
+{
+  "changes": {
+    "CONFIG_ACC_CACHES": "1024 8",
+    "CONFIG_COH_NOC_WIDTH": "128",
+    "CONFIG_MEM_LINK_WIDTH": "128",
+    "CONFIG_QUEUE_SIZE": "16",
+    "CONFIG_SLM_KBYTES": "512"
+  },
+  "rationale": "Manual latency-focused candidate for lstm_rtl. Increase local accelerator capacity and on-chip communication bandwidth aggressively while keeping DMA width at 64 for implementation compatibility.",
+  "search_intent": "Aggressively reduce memory-system pressure for lstm_rtl without changing accelerator implementation width."
+}

@@ -1,0 +1,9 @@
+{
+  "changes": {
+    "CONFIG_ACC_CACHES": "128 4",
+    "CONFIG_CPU_CACHES": "128 4 256 8",
+    "CONFIG_QUEUE_SIZE": "2"
+  },
+  "rationale": "Optimization intent: area/resource relief. The LUT utilization is excessively high at ~159%, indicating extreme implementation pressure. To drastically reduce logic area, we shrink the CPU and ACC cache sizes and lower the NoC queue size, which heavily impacts router LUT usage.",
+  "search_intent": "Aggressive area-reduction via cache and queue size shrinking to address severe LUT utilization bottlenecks."
+}

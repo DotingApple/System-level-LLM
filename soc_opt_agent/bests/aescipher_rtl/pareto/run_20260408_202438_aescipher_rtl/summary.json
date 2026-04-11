@@ -1,0 +1,38 @@
+{
+  "accelerator_name": "aescipher_rtl",
+  "benchmark_exe": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/aescipher_rtl.exe",
+  "cycles_improvement_vs_baseline": 0.0,
+  "cycles_improvement_vs_best": 0.0,
+  "metrics": {
+    "accelerator_invocations": 1,
+    "accelerator_mem_cycles": 34,
+    "accelerator_tlb_loading_cycles": 21,
+    "accelerator_total_cycles": 63,
+    "bram_utilization": 18.2,
+    "coherence_forwards_from_llc": 0,
+    "coherence_requests_to_llc": 178,
+    "coherence_responses_received_by_llc": 0,
+    "coherence_responses_sent_by_llc": 360,
+    "coherent_dma_requests_to_llc": 0,
+    "coherent_dma_responses_from_llc": 0,
+    "dma_requests_to_mem": 11,
+    "dma_responses_from_mem": 5,
+    "dsp_utilization": 0.96,
+    "ff_utilization": 18.89,
+    "lut_utilization": 43.98,
+    "offchip_memory_accesses": 186,
+    "passed": true,
+    "resource_score": 20.507499999999997
+  },
+  "mode": "candidate",
+  "proposal": {
+    "changes": {
+      "CONFIG_CPU_CACHES": "128 4 256 8"
+    },
+    "rationale": "Pursuing area/resource relief. An aggressive reduction of CPU caches to '64 2 128 4' resulted in an execution failure, indicating an overshoot. Contracting around the better region by halving the L1 and L2 set counts from the baseline to '128 4 256 8' aims to safely reduce LUT and BRAM utilization without breaking execution stability.",
+    "search_intent": "Moderately reduce CPU caches to lower area utilization after a bolder reduction failed."
+  },
+  "resource_improvement_vs_baseline": 0.0,
+  "resource_improvement_vs_best": 0.0,
+  "resource_score": 20.507499999999997
+}

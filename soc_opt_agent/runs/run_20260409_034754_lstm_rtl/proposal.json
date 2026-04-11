@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_ACC_CACHES": "1024 8"
+  },
+  "rationale": "Increasing QUEUE_SIZE and SLM_KBYTES had no effect on latency, indicating that local scratchpad capacity and request concurrency are not the current bottlenecks. Since accelerator_mem_cycles accounts for 99% of total cycles and off-chip memory accesses remain high, we increase CONFIG_ACC_CACHES capacity and associativity to 1024 8 to capture more locality, aiming to reduce off-chip memory accesses and improve latency.",
+  "search_intent": "latency"
+}

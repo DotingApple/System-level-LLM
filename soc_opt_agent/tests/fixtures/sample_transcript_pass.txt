@@ -1,0 +1,16 @@
+ESP MONITOR STATS
+Coherence requests to LLC 0: 178
+Coherence forwards from LLC 0: 0
+Coherence responses received by LLC 0: 0
+Coherence responses sent by LLC 0: 360
+DMA requests to mem tile 0: 11
+DMA responses from mem tile 0: 5
+Coherent DMA requests to LLC 0: 0
+Coherent DMA responses from LLC 0: 0
+Accelerator 0 TLB-loading cycles: 21
+Accelerator 0 mem cycles: 34
+Accelerator 0 total cycles: 63
+Accelerator 0 invocations: 1
+Off-chip memory accesses at mem tile 0: 186
+Program Completed!
+... PASS

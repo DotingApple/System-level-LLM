@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_CPU_CACHES": "128 4 256 8"
+  },
+  "rationale": "Pursuing area/resource relief. An aggressive reduction of CPU caches to '64 2 128 4' resulted in an execution failure, indicating an overshoot. Contracting around the better region by halving the L1 and L2 set counts from the baseline to '128 4 256 8' aims to safely reduce LUT and BRAM utilization without breaking execution stability.",
+  "search_intent": "Moderately reduce CPU caches to lower area utilization after a bolder reduction failed."
+}

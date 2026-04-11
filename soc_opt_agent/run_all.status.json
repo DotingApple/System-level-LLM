@@ -1,0 +1,57 @@
+{
+  "baseline_cycles": 8015,
+  "baseline_resource_score": 20.507499999999997,
+  "best_cycles": 8015,
+  "best_resource_score": 20.507499999999997,
+  "best_run_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl",
+  "completed_accelerators": [],
+  "current_accelerator": "lstm_rtl",
+  "iteration": 4,
+  "last_cycles": 8015,
+  "last_failure_reason": null,
+  "last_resource_improvement_vs_baseline": 0.0,
+  "last_resource_improvement_vs_best": 0.0,
+  "last_resource_score": 20.507499999999997,
+  "mode": "run-all",
+  "pareto_front": [
+    {
+      "cycles": 8015,
+      "resource_score": 20.507499999999997,
+      "run_dir": "/home/cz2931/esp/soc_opt_agent/baselines/lstm_rtl",
+      "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/lstm_rtl"
+    },
+    {
+      "cycles": 8015,
+      "resource_score": 20.507499999999997,
+      "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_015950_lstm_rtl",
+      "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_015950_lstm_rtl"
+    },
+    {
+      "cycles": 8015,
+      "resource_score": 20.507499999999997,
+      "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_025727_lstm_rtl",
+      "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_025727_lstm_rtl"
+    },
+    {
+      "cycles": 8015,
+      "resource_score": 20.507499999999997,
+      "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_034754_lstm_rtl",
+      "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_034754_lstm_rtl"
+    },
+    {
+      "cycles": 8015,
+      "resource_score": 20.507499999999997,
+      "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260409_043818_lstm_rtl",
+      "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto/run_20260409_043818_lstm_rtl"
+    }
+  ],
+  "pareto_front_dir": "/home/cz2931/esp/soc_opt_agent/bests/lstm_rtl/pareto",
+  "pareto_front_size": 5,
+  "phase": "candidate",
+  "recent_improvements": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ]
+}

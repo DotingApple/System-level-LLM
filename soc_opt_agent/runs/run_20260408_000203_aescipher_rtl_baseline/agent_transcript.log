@@ -1,0 +1,198 @@
+[2026-04-08 00:02:03] START baseline accelerator=aescipher_rtl
+[2026-04-08 00:02:03] START esp-config: make esp-config
+[2026-04-08 00:02:03] [esp-config] Exported Cadence environment
+[2026-04-08 00:02:03] [esp-config] Exported Xilinx environment
+[2026-04-08 00:02:03] [esp-config] Exported Mentor environment
+[2026-04-08 00:02:03] [esp-config] Default Synopsys DC environment set
+[2026-04-08 00:02:03] [esp-config] Exported proFPGA v. 2021A environment
+[2026-04-08 00:02:03] [esp-config] Exported Leon3 tool-chain environment
+[2026-04-08 00:02:03] [esp-config] Exported RISCV tool-chain environment
+[2026-04-08 00:02:04] [esp-config]     DIFF checking .esp_config...
+[2026-04-08 00:02:04] [esp-config]     INFO Using custom configuration found in ".esp_config" for ESP
+[2026-04-08 00:02:04] [esp-config] 
+[2026-04-08 00:02:04] [esp-config] Generating ESP configuration...
+[2026-04-08 00:02:07] [esp-config] TILE_0_0 = 0 mem mem
+[2026-04-08 00:02:07] [esp-config] TILE_0_1 = 1 cpu cpu
+[2026-04-08 00:02:07] [esp-config] TILE_1_0 = 2 acc AESCIPHER_RTL basic_dma64 0 0 sld
+[2026-04-08 00:02:07] [esp-config] TILE_1_1 = 3 misc IO
+[2026-04-08 00:02:07] [esp-config] Created global constants definition into 'esp_global.vhd'
+[2026-04-08 00:02:07] [esp-config] Created global verilog constants into 'esp_global.svh'
+[2026-04-08 00:02:07] [esp-config] Created configuration into 'socmap.vhd'
+[2026-04-08 00:02:07] [esp-config] Created ESPLink header into 'esplink.h'
+[2026-04-08 00:02:07] [esp-config] Created kernel module load script into 'S64esp'
+[2026-04-08 00:02:07] [esp-config] Created soc defines into 'soc_defs.h'
+[2026-04-08 00:02:07] [esp-config] Created soc locations into 'soc_locs.h'
+[2026-04-08 00:02:07] [esp-config] Created device-tree into 'riscv.dts'
+[2026-04-08 00:02:07] [esp-config] Created RTL caches configuration into 'cache_cfg.svh'
+[2026-04-08 00:02:07] [esp-config] Created configuration into 'mmi64_regs.h'
+[2026-04-08 00:02:07] [esp-config] /usr/bin/xvfb-run: line 186: kill: (706) - No such process
+[2026-04-08 00:02:07] [esp-config] make: *** [/home/cz2931/esp/utils/make/esp.mk:28: socgen/esp/socmap.vhd] Error 1
+[2026-04-08 00:02:07] END esp-config: returncode=2
+[2026-04-08 00:02:07] START baremetal-build: make aescipher_rtl-baremetal
+[2026-04-08 00:02:07] [baremetal-build] Exported Cadence environment
+[2026-04-08 00:02:07] [baremetal-build] Exported Xilinx environment
+[2026-04-08 00:02:07] [baremetal-build] Exported Mentor environment
+[2026-04-08 00:02:07] [baremetal-build] Default Synopsys DC environment set
+[2026-04-08 00:02:07] [baremetal-build] Exported proFPGA v. 2021A environment
+[2026-04-08 00:02:07] [baremetal-build] Exported Leon3 tool-chain environment
+[2026-04-08 00:02:07] [baremetal-build] Exported RISCV tool-chain environment
+[2026-04-08 00:02:08] [baremetal-build]     MAKE aescipher_rtl-baremetal
+[2026-04-08 00:02:08] [baremetal-build] make[1]: Entering directory '/home/cz2931/esp/accelerators/rtl/aescipher_rtl/sw/baremetal'
+[2026-04-08 00:02:08] [baremetal-build] CPU_ARCH=ariane DESIGN_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp BUILD_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../probe CACHELINE_WIDTH=128 make -C /home/cz2931/esp/soft/common/drivers/baremetal/probe
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Entering directory '/home/cz2931/esp/soft/common/drivers/baremetal/probe'
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Nothing to be done for 'target'.
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Leaving directory '/home/cz2931/esp/soft/common/drivers/baremetal/probe'
+[2026-04-08 00:02:08] [baremetal-build] CPU_ARCH=ariane DESIGN_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp BUILD_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../monitors MODE=BAREC \
+[2026-04-08 00:02:08] [baremetal-build] 		 make -B -C /home/cz2931/esp/soft/common/drivers/baremetal/../common/monitors
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Entering directory '/home/cz2931/esp/soft/common/drivers/common/monitors'
+[2026-04-08 00:02:08] [baremetal-build] riscv64-unknown-elf-gcc  -Wall -Werror -DBAREC -O2 -I../../../../ariane/riscv-tests/env -I../../../../ariane/riscv-tests/benchmarks/common -I../../../../ariane/bootrom -I../../../../ariane/riscv-pk/machine -mcmodel=medany -static -std=gnu99 -ffast-math -fno-common -fno-builtin-printf -nostdlib -nostartfiles -I../include -I../../common/include -I/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp -c libmonitors.c -o /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../monitors/libmonitors.o
+[2026-04-08 00:02:08] [baremetal-build] riscv64-unknown-elf-ar r /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../monitors/libmonitors.a /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../monitors/libmonitors.o
+[2026-04-08 00:02:08] [baremetal-build] riscv64-unknown-elf-ranlib /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../monitors/libmonitors.a
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Leaving directory '/home/cz2931/esp/soft/common/drivers/common/monitors'
+[2026-04-08 00:02:08] [baremetal-build] CPU_ARCH=ariane DESIGN_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp BUILD_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../utils/baremetal make -C /home/cz2931/esp/soft/common/drivers/baremetal/utils
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Entering directory '/home/cz2931/esp/soft/common/drivers/baremetal/utils'
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Nothing to be done for 'target'.
+[2026-04-08 00:02:08] [baremetal-build] make[2]: Leaving directory '/home/cz2931/esp/soft/common/drivers/baremetal/utils'
+[2026-04-08 00:02:08] [baremetal-build] riscv64-unknown-elf-gcc -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/env -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/benchmarks/common -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/bootrom -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-pk/machine -mcmodel=medany -static -ffast-math -fno-common -fno-builtin-printf -nostartfiles -nostdlib  -I/home/cz2931/esp/soft/common/drivers/baremetal/include -I/home/cz2931/esp/soft/common/drivers/baremetal/../common/include -I/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp -std=gnu99 -O2 -L/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../monitors -o /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/aescipher.exe aescipher.c /home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/common/syscalls.c /home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/benchmarks/common/crt.S -T /home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/benchmarks/common/test.ld -lgcc -lm -lmonitors /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../probe/libprobe.a /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../monitors/libmonitors.a /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/../../utils/baremetal/libutils.a 
+[2026-04-08 00:02:09] [baremetal-build] riscv64-unknown-elf-objcopy -O binary  /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/aescipher.exe /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/aescipher_rtl/baremetal/aescipher.bin
+[2026-04-08 00:02:09] [baremetal-build] make[1]: Leaving directory '/home/cz2931/esp/accelerators/rtl/aescipher_rtl/sw/baremetal'
+[2026-04-08 00:02:09] [baremetal-build]     CP aescipher_rtl-baremetal
+[2026-04-08 00:02:09] [baremetal-build]     CP aescipher_rtl-baremetal
+[2026-04-08 00:02:09] END baremetal-build: returncode=0
+[2026-04-08 00:02:09] START sim: make sim TEST_PROGRAM=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/aescipher_rtl.exe
+[2026-04-08 00:02:09] [sim] Exported Cadence environment
+[2026-04-08 00:02:09] [sim] Exported Xilinx environment
+[2026-04-08 00:02:09] [sim] Exported Mentor environment
+[2026-04-08 00:02:09] [sim] Default Synopsys DC environment set
+[2026-04-08 00:02:09] [sim] Exported proFPGA v. 2021A environment
+[2026-04-08 00:02:09] [sim] Exported Leon3 tool-chain environment
+[2026-04-08 00:02:09] [sim] Exported RISCV tool-chain environment
+[2026-04-08 00:02:10] [sim]     MKDIR socketgen
+[2026-04-08 00:02:10] [sim]     RUN socketgen
+[2026-04-08 00:02:10] [sim]     WARNING: No caches found in /home/cz2931/esp/tech/virtex7/sccs.
+[2026-04-08 00:02:10] [sim]              Please check the "Use RTL" option in the "Cache Configuration" tab when configuring ESP.
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for NV_NVDLA
+[2026-04-08 00:02:10] [sim]           NV_NVDLA: NVIDIA, NVDLA small, ID 100
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping aescipher_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for aescipher_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for aescipher_rtl
+[2026-04-08 00:02:10] [sim]           aescipher_rtl_[basic_dma64]: Accelerator AESCIPHER, 4MB, ID 04a
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             aes_num_blocks, aes_num_blocks, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_4, aes_key_4, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_5, aes_key_5, 32bits, register 18, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_6, aes_key_6, 32bits, register 19, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_7, aes_key_7, 32bits, register 20, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_0, aes_key_0, 32bits, register 21, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_1, aes_key_1, 32bits, register 22, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_2, aes_key_2, 32bits, register 23, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_3, aes_key_3, 32bits, register 24, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping aesdecipher_v2_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for aesdecipher_v2_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for aesdecipher_v2_rtl
+[2026-04-08 00:02:10] [sim]           aesdecipher_v2_rtl_[basic_dma64]: Accelerator AESDECIPHER_V2, 4MB, ID 030
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             aes_num_blocks, aes_num_blocks, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_4, aes_key_4, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_5, aes_key_5, 32bits, register 18, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_6, aes_key_6, 32bits, register 19, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_7, aes_key_7, 32bits, register 20, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_0, aes_key_0, 32bits, register 21, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_1, aes_key_1, 32bits, register 22, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_2, aes_key_2, 32bits, register 23, def. value 0
+[2026-04-08 00:02:10] [sim]             aes_key_3, aes_key_3, 32bits, register 24, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping conv_new_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for conv_new_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for conv_new_rtl
+[2026-04-08 00:02:10] [sim]           conv_new_rtl_[basic_dma64]: Accelerator CONV_NEW, 4MB, ID 321
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             param_width, param_width, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             param_height, param_height, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping fcdnn_acc_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for fcdnn_acc_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for fcdnn_acc_rtl
+[2026-04-08 00:02:10] [sim]           fcdnn_acc_rtl_[basic_dma64]: Accelerator FCDNN_ACC, 4MB, ID 001
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             runs, runs, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             pipe_mode, pipe_mode, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]             exp_val, exp_val, 32bits, register 18, def. value 0
+[2026-04-08 00:02:10] [sim]             mux_cfg, mux_cfg, 32bits, register 19, def. value 0
+[2026-04-08 00:02:10] [sim]             array_size, array_size, 32bits, register 20, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping fft_64_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for fft_64_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for fft_64_rtl
+[2026-04-08 00:02:10] [sim]           fft_64_rtl_[basic_dma64]: Accelerator FFT_64, 4MB, ID 094
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             fft_points, fft_points, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping lstm_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for lstm_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for lstm_rtl
+[2026-04-08 00:02:10] [sim]           lstm_rtl_[basic_dma64]: Accelerator LSTM, 4MB, ID 031
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             num_timesteps, num_timesteps, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             hidden_dim, hidden_dim, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]             in_dim, in_dim, 32bits, register 18, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping sha256_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for sha256_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for sha256_rtl
+[2026-04-08 00:02:10] [sim]           sha256_rtl_[basic_dma64]: Accelerator SHA256, 4MB, ID 007
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             sha_mode, sha_mode, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             sha_msg_size, sha_msg_size, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping simple_dnn_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for simple_dnn_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for simple_dnn_rtl
+[2026-04-08 00:02:10] [sim]           simple_dnn_rtl_[basic_dma64]: Accelerator SIMPLE_DNN, 4MB, ID 005
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             num_hidden, num_hidden, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             num_out, num_out, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]             num_in, num_in, 32bits, register 18, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping sobel_v2_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for sobel_v2_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for sobel_v2_rtl
+[2026-04-08 00:02:10] [sim]           sobel_v2_rtl_[basic_dma64]: Accelerator SOBEL_V2, 4MB, ID 014
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             height, height, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             width, width, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: System DMA_WIDTH is 64; skipping spmv_rtl_basic_dma32
+[2026-04-08 00:02:10] [sim]     INFO: Found implementation basic_dma64 for spmv_rtl
+[2026-04-08 00:02:10] [sim]     INFO: Retrieving information for spmv_rtl
+[2026-04-08 00:02:10] [sim]           spmv_rtl_[basic_dma64]: Accelerator SPMV, 4MB, ID 0a1
+[2026-04-08 00:02:10] [sim]           {
+[2026-04-08 00:02:10] [sim]             spmv_vec_len, spmv_vec_len, 32bits, register 16, def. value 0
+[2026-04-08 00:02:10] [sim]             spmv_nnz, spmv_nnz, 32bits, register 17, def. value 0
+[2026-04-08 00:02:10] [sim]           }
+[2026-04-08 00:02:10] [sim]     INFO: Generating RTL to ./socketgen
+[2026-04-08 00:02:10] [sim]     MAKE socgen/esp/plic_regmap.sv
+[2026-04-08 00:02:10] [sim] strings: '/home/cz2931/esp/accelerators/third-party/NV_NVDLA/NV_NVDLA.verilog': No such file
+[2026-04-08 00:02:10] [sim]     BUILD /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/riscv.dtb
+[2026-04-08 00:02:10] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/startup.o
+[2026-04-08 00:02:10] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/uart.o
+[2026-04-08 00:02:10] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/main.o
+[2026-04-08 00:02:10] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/prom.exe
+[2026-04-08 00:02:10] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/prom.srec
+[2026-04-08 00:02:10] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/ram.srec
+[2026-04-08 00:02:10] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/prom.bin
+[2026-04-08 00:02:10] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/systest.bin
+[2026-04-08 00:02:10] [sim] python3 /home/cz2931/esp/utils/scripts/file_handling/bin2txt.py ariane
+[2026-04-08 00:02:10] [sim] Read binary file soft-build/ariane/prom.bin
+[2026-04-08 00:02:10] [sim] Write text file soft-build/ariane/prom.txt
+[2026-04-08 00:02:10] [sim] Read binary file soft-build/ariane/systest.bin
+[2026-04-08 00:02:10] [sim] Write text file soft-build/ariane/systest.txt
+[2026-04-08 00:02:10] [sim]     MAKE sim-compile
+[2026-04-08 00:02:10] [sim] make[1]: Entering directory '/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/modelsim'
+[2026-04-08 00:02:10] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-08 00:02:10] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp/esp_global.vhd
+[2026-04-08 00:02:10] [sim] make[1]: *** [vsim.mk:5307: work/esp_global/_primary.dat] Bad system call (core dumped)
+[2026-04-08 00:02:10] [sim] make[1]: Leaving directory '/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/modelsim'
+[2026-04-08 00:02:10] [sim] make: *** [/home/cz2931/esp/utils/make/modelsim.mk:116: sim-compile] Error 2
+[2026-04-08 00:02:10] FAIL sim: Command '['/bin/bash', '-lc', 'source /opt/cad/scripts/tools_env.sh && make sim TEST_PROGRAM=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/aescipher_rtl.exe']' returned non-zero exit status 2.

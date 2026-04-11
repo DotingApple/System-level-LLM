@@ -1,0 +1,32 @@
+[2026-04-08 00:00:10] START baseline accelerator=aescipher_rtl
+[2026-04-08 00:00:10] START esp-config: make esp-config
+[2026-04-08 00:00:10] [esp-config] Exported Cadence environment
+[2026-04-08 00:00:10] [esp-config] Exported Xilinx environment
+[2026-04-08 00:00:10] [esp-config] Exported Mentor environment
+[2026-04-08 00:00:10] [esp-config] Default Synopsys DC environment set
+[2026-04-08 00:00:10] [esp-config] Exported proFPGA v. 2021A environment
+[2026-04-08 00:00:10] [esp-config] Exported Leon3 tool-chain environment
+[2026-04-08 00:00:10] [esp-config] Exported RISCV tool-chain environment
+[2026-04-08 00:00:11] [esp-config]     DIFF checking .esp_config...
+[2026-04-08 00:00:11] [esp-config]     INFO Using custom configuration found in ".esp_config" for ESP
+[2026-04-08 00:00:11] [esp-config] 
+[2026-04-08 00:00:11] [esp-config] Generating ESP configuration...
+[2026-04-08 00:00:14] [esp-config] Traceback (most recent call last):
+[2026-04-08 00:00:14] [esp-config]   File "/home/cz2931/esp/tools/socgen/esp_creator_batch.py", line 53, in <module>
+[2026-04-08 00:00:14] [esp-config]     soc = SoC_Config(
+[2026-04-08 00:00:14] [esp-config]   File "/home/cz2931/esp/tools/socgen/soc.py", line 584, in __init__
+[2026-04-08 00:00:14] [esp-config]     self.read_config(temporary)
+[2026-04-08 00:00:14] [esp-config]   File "/home/cz2931/esp/tools/socgen/soc.py", line 190, in read_config
+[2026-04-08 00:00:14] [esp-config]     self.noc.create_topology(self.noc.top, rows, cols)
+[2026-04-08 00:00:14] [esp-config]   File "/home/cz2931/esp/tools/socgen/NoCConfiguration.py", line 144, in create_topology
+[2026-04-08 00:00:14] [esp-config]     new_topology[y].append(Tile(top, y, x))
+[2026-04-08 00:00:14] [esp-config]   File "/home/cz2931/esp/tools/socgen/NoCConfiguration.py", line 127, in __init__
+[2026-04-08 00:00:14] [esp-config]     self.label = Label(top)
+[2026-04-08 00:00:14] [esp-config]   File "/usr/lib64/python3.8/tkinter/__init__.py", line 3148, in __init__
+[2026-04-08 00:00:14] [esp-config]     Widget.__init__(self, master, 'label', cnf, kw)
+[2026-04-08 00:00:14] [esp-config]   File "/usr/lib64/python3.8/tkinter/__init__.py", line 2572, in __init__
+[2026-04-08 00:00:14] [esp-config]     self.tk.call(
+[2026-04-08 00:00:14] [esp-config] _tkinter.TclError: invalid command name "label"
+[2026-04-08 00:00:14] [esp-config] /usr/bin/xvfb-run: line 186: kill: (706) - No such process
+[2026-04-08 00:00:14] [esp-config] make: *** [/home/cz2931/esp/utils/make/esp.mk:28: socgen/esp/socmap.vhd] Error 1
+[2026-04-08 00:00:14] FAIL esp-config: Command '['/bin/bash', '-lc', 'source /opt/cad/scripts/tools_env.sh && make esp-config']' returned non-zero exit status 2.

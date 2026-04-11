@@ -1,0 +1,35 @@
+{
+  "commands": [
+    {
+      "command": [
+        "make",
+        "esp-config"
+      ],
+      "cwd": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Manual run; esp-config generated updated socgen outputs before simulation."
+    },
+    {
+      "command": [
+        "make",
+        "lstm_rtl-baremetal"
+      ],
+      "cwd": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Manual run; rebuilt lstm_rtl baremetal executable before simulation."
+    },
+    {
+      "command": [
+        "make",
+        "sim",
+        "TEST_PROGRAM=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/lstm_rtl.exe"
+      ],
+      "cwd": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Manual run; simulation completed and transcript captured."
+    }
+  ]
+}

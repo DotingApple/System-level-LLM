@@ -1,0 +1,50 @@
+[
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/baselines/aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/aescipher_rtl"
+  },
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260408_171417_aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/run_20260408_171417_aescipher_rtl"
+  },
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260408_175435_aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/run_20260408_175435_aescipher_rtl"
+  },
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260408_183621_aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/run_20260408_183621_aescipher_rtl"
+  },
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260408_190345_aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/run_20260408_190345_aescipher_rtl"
+  },
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260408_193124_aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/run_20260408_193124_aescipher_rtl"
+  },
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260408_195811_aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/run_20260408_195811_aescipher_rtl"
+  },
+  {
+    "cycles": 63,
+    "resource_score": 20.507499999999997,
+    "run_dir": "/home/cz2931/esp/soc_opt_agent/runs/run_20260408_202438_aescipher_rtl",
+    "snapshot_dir": "/home/cz2931/esp/soc_opt_agent/bests/aescipher_rtl/pareto/run_20260408_202438_aescipher_rtl"
+  }
+]

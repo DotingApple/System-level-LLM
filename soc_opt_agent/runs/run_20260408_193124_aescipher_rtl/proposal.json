@@ -1,0 +1,8 @@
+{
+  "changes": {
+    "CONFIG_ACC_CACHES": "64 2",
+    "CONFIG_SLM_KBYTES": "16"
+  },
+  "rationale": "Pursuing area/resource relief. Previous attempts to reduce area yielded no resource score improvements, likely because the capacity reductions were not aggressive enough for this extremely small workload. Boldly shrinking CONFIG_SLM_KBYTES to 16 and CONFIG_ACC_CACHES to 64 sets with 2-way associativity aims to aggressively cut into the 18.2% BRAM and 43.98% LUT utilization without hurting the 63-cycle latency.",
+  "search_intent": "Aggressively shrink SLM and accelerator caches to reduce BRAM and LUT utilization."
+}

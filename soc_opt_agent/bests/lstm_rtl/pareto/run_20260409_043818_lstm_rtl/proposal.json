@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_CPU_CACHES": "1024 8 2048 16"
+  },
+  "rationale": "Since queue, SLM, and accelerator cache capacities repeatedly showed no impact on the 7922 memory cycles, and NoC/memory link widths are already at their maximum supported values of 64, we infer these families are currently insensitive or maxed out. We switch to the CPU cache family, increasing CONFIG_CPU_CACHES to reduce CPU-induced memory traffic. This aims to alleviate memory link contention, allowing faster DMA responses for the accelerator and thereby lowering accelerator_mem_cycles.",
+  "search_intent": "latency"
+}

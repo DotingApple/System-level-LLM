@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_QUEUE_SIZE": "64"
+  },
+  "rationale": "Previous incremental attempts across queue size, SLM, and cache capacities left the 7922 memory cycles entirely unchanged, indicating those tweaks were either insensitive or too conservative. Since NoC and memory link widths are already at their maximum supported values (64), we return to CONFIG_QUEUE_SIZE with a much bolder increase to 64 to test if drastically expanding request buffering can finally hide the memory latency and reduce accelerator_mem_cycles.",
+  "search_intent": "latency"
+}

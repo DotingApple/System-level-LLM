@@ -1,0 +1,38 @@
+{
+  "accelerator_name": "aescipher_rtl",
+  "benchmark_exe": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/aescipher_rtl.exe",
+  "cycles_improvement_vs_baseline": 0.0,
+  "cycles_improvement_vs_best": 0.0,
+  "metrics": {
+    "accelerator_invocations": 1,
+    "accelerator_mem_cycles": 34,
+    "accelerator_tlb_loading_cycles": 21,
+    "accelerator_total_cycles": 63,
+    "bram_utilization": 18.2,
+    "coherence_forwards_from_llc": 0,
+    "coherence_requests_to_llc": 178,
+    "coherence_responses_received_by_llc": 0,
+    "coherence_responses_sent_by_llc": 360,
+    "coherent_dma_requests_to_llc": 0,
+    "coherent_dma_responses_from_llc": 0,
+    "dma_requests_to_mem": 11,
+    "dma_responses_from_mem": 5,
+    "dsp_utilization": 0.96,
+    "ff_utilization": 18.89,
+    "lut_utilization": 43.98,
+    "offchip_memory_accesses": 184,
+    "passed": true,
+    "resource_score": 20.507499999999997
+  },
+  "mode": "candidate",
+  "proposal": {
+    "changes": {
+      "CONFIG_CPU_CACHES": "256 4 512 8"
+    },
+    "rationale": "Pursuing area/resource relief. Since previous attempts to shrink accelerator-specific resources (SLM and ACC_CACHES) did not yield noticeable resource score improvements, the dominant resource consumer is likely the CPU caches. Halving the CPU L1 and L2 caches should substantially reduce BRAM and LUT utilization without heavily impacting the very short 63-cycle execution latency.",
+    "search_intent": "Shrink CPU caches to reduce BRAM and LUT utilization."
+  },
+  "resource_improvement_vs_baseline": 0.0,
+  "resource_improvement_vs_best": 0.0,
+  "resource_score": 20.507499999999997
+}

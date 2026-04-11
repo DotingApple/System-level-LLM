@@ -1,0 +1,22 @@
+[2026-04-07 23:52:30] START baseline accelerator=aescipher_rtl
+[2026-04-07 23:52:30] START esp-config: make esp-config
+[2026-04-07 23:52:30] [esp-config] Exported Cadence environment
+[2026-04-07 23:52:30] [esp-config] Exported Xilinx environment
+[2026-04-07 23:52:30] [esp-config] Exported Mentor environment
+[2026-04-07 23:52:30] [esp-config] Default Synopsys DC environment set
+[2026-04-07 23:52:30] [esp-config] Exported proFPGA v. 2021A environment
+[2026-04-07 23:52:30] [esp-config] Exported Leon3 tool-chain environment
+[2026-04-07 23:52:30] [esp-config] Exported RISCV tool-chain environment
+[2026-04-07 23:52:31] [esp-config]     DIFF checking .esp_config...
+[2026-04-07 23:52:31] [esp-config]     INFO Using custom configuration found in ".esp_config" for ESP
+[2026-04-07 23:52:31] [esp-config] 
+[2026-04-07 23:52:31] [esp-config] Generating ESP configuration...
+[2026-04-07 23:52:34] [esp-config] Traceback (most recent call last):
+[2026-04-07 23:52:34] [esp-config]   File "/home/cz2931/esp/tools/socgen/esp_creator_batch.py", line 49, in <module>
+[2026-04-07 23:52:34] [esp-config]     root = Tk()
+[2026-04-07 23:52:34] [esp-config]   File "/usr/lib64/python3.8/tkinter/__init__.py", line 2270, in __init__
+[2026-04-07 23:52:34] [esp-config]     self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+[2026-04-07 23:52:34] [esp-config] _tkinter.TclError: couldn't connect to display ":99"
+[2026-04-07 23:52:34] [esp-config] /usr/bin/xvfb-run: line 186: kill: (706) - No such process
+[2026-04-07 23:52:34] [esp-config] make: *** [/home/cz2931/esp/utils/make/esp.mk:28: socgen/esp/socmap.vhd] Error 1
+[2026-04-07 23:52:34] FAIL esp-config: Command '['/bin/bash', '-lc', 'source /opt/cad/scripts/tools_env.sh && make esp-config']' returned non-zero exit status 2.

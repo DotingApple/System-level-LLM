@@ -1,0 +1,1834 @@
+[2026-04-09 03:47:54] START candidate accelerator=lstm_rtl changes={"CONFIG_ACC_CACHES": "1024 8"}
+[2026-04-09 03:47:54] START esp-config: make esp-config
+[2026-04-09 03:47:55] [esp-config] Exported Cadence environment
+[2026-04-09 03:47:55] [esp-config] Exported Xilinx environment
+[2026-04-09 03:47:55] [esp-config] Exported Mentor environment
+[2026-04-09 03:47:55] [esp-config] Default Synopsys DC environment set
+[2026-04-09 03:47:55] [esp-config] Exported proFPGA v. 2021A environment
+[2026-04-09 03:47:55] [esp-config] Exported Leon3 tool-chain environment
+[2026-04-09 03:47:55] [esp-config] Exported RISCV tool-chain environment
+[2026-04-09 03:47:55] [esp-config]     DIFF checking .esp_config...
+[2026-04-09 03:47:55] [esp-config]     INFO Using custom configuration found in ".esp_config" for ESP
+[2026-04-09 03:47:55] [esp-config] 
+[2026-04-09 03:47:55] [esp-config] Generating ESP configuration...
+[2026-04-09 03:47:58] [esp-config] TILE_0_0 = 0 mem mem
+[2026-04-09 03:47:58] [esp-config] TILE_0_1 = 1 cpu cpu
+[2026-04-09 03:47:58] [esp-config] TILE_1_0 = 2 acc LSTM_RTL basic_dma64 0 0 sld
+[2026-04-09 03:47:58] [esp-config] TILE_1_1 = 3 misc IO
+[2026-04-09 03:47:58] [esp-config] Created global constants definition into 'esp_global.vhd'
+[2026-04-09 03:47:58] [esp-config] Created global verilog constants into 'esp_global.svh'
+[2026-04-09 03:47:58] [esp-config] Created configuration into 'socmap.vhd'
+[2026-04-09 03:47:58] [esp-config] Created ESPLink header into 'esplink.h'
+[2026-04-09 03:47:58] [esp-config] Created kernel module load script into 'S64esp'
+[2026-04-09 03:47:58] [esp-config] Created soc defines into 'soc_defs.h'
+[2026-04-09 03:47:58] [esp-config] Created soc locations into 'soc_locs.h'
+[2026-04-09 03:47:58] [esp-config] Created device-tree into 'riscv.dts'
+[2026-04-09 03:47:58] [esp-config] Created RTL caches configuration into 'cache_cfg.svh'
+[2026-04-09 03:47:58] [esp-config] Created configuration into 'mmi64_regs.h'
+[2026-04-09 03:47:58] END esp-config: returncode=0
+[2026-04-09 03:47:58] START baremetal-build: make lstm_rtl-baremetal
+[2026-04-09 03:47:58] [baremetal-build] Exported Cadence environment
+[2026-04-09 03:47:58] [baremetal-build] Exported Xilinx environment
+[2026-04-09 03:47:58] [baremetal-build] Exported Mentor environment
+[2026-04-09 03:47:58] [baremetal-build] Default Synopsys DC environment set
+[2026-04-09 03:47:58] [baremetal-build] Exported proFPGA v. 2021A environment
+[2026-04-09 03:47:58] [baremetal-build] Exported Leon3 tool-chain environment
+[2026-04-09 03:47:58] [baremetal-build] Exported RISCV tool-chain environment
+[2026-04-09 03:47:59] [baremetal-build]     MAKE lstm_rtl-baremetal
+[2026-04-09 03:47:59] [baremetal-build] make[1]: Entering directory '/home/cz2931/esp/accelerators/rtl/lstm_rtl/sw/baremetal'
+[2026-04-09 03:47:59] [baremetal-build] CPU_ARCH=ariane DESIGN_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp BUILD_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../probe CACHELINE_WIDTH=128 make -C /home/cz2931/esp/soft/common/drivers/baremetal/probe
+[2026-04-09 03:47:59] [baremetal-build] make[2]: Entering directory '/home/cz2931/esp/soft/common/drivers/baremetal/probe'
+[2026-04-09 03:47:59] [baremetal-build] make[2]: Nothing to be done for 'target'.
+[2026-04-09 03:47:59] [baremetal-build] make[2]: Leaving directory '/home/cz2931/esp/soft/common/drivers/baremetal/probe'
+[2026-04-09 03:47:59] [baremetal-build] CPU_ARCH=ariane DESIGN_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp BUILD_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../monitors MODE=BAREC \
+[2026-04-09 03:47:59] [baremetal-build] 		 make -B -C /home/cz2931/esp/soft/common/drivers/baremetal/../common/monitors
+[2026-04-09 03:47:59] [baremetal-build] make[2]: Entering directory '/home/cz2931/esp/soft/common/drivers/common/monitors'
+[2026-04-09 03:47:59] [baremetal-build] riscv64-unknown-elf-gcc  -Wall -Werror -DBAREC -O2 -I../../../../ariane/riscv-tests/env -I../../../../ariane/riscv-tests/benchmarks/common -I../../../../ariane/bootrom -I../../../../ariane/riscv-pk/machine -mcmodel=medany -static -std=gnu99 -ffast-math -fno-common -fno-builtin-printf -nostdlib -nostartfiles -I../include -I../../common/include -I/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp -c libmonitors.c -o /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../monitors/libmonitors.o
+[2026-04-09 03:47:59] [baremetal-build] riscv64-unknown-elf-ar r /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../monitors/libmonitors.a /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../monitors/libmonitors.o
+[2026-04-09 03:48:00] [baremetal-build] riscv64-unknown-elf-ranlib /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../monitors/libmonitors.a
+[2026-04-09 03:48:00] [baremetal-build] make[2]: Leaving directory '/home/cz2931/esp/soft/common/drivers/common/monitors'
+[2026-04-09 03:48:00] [baremetal-build] CPU_ARCH=ariane DESIGN_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp BUILD_PATH=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../utils/baremetal make -C /home/cz2931/esp/soft/common/drivers/baremetal/utils
+[2026-04-09 03:48:00] [baremetal-build] make[2]: Entering directory '/home/cz2931/esp/soft/common/drivers/baremetal/utils'
+[2026-04-09 03:48:00] [baremetal-build] make[2]: Nothing to be done for 'target'.
+[2026-04-09 03:48:00] [baremetal-build] make[2]: Leaving directory '/home/cz2931/esp/soft/common/drivers/baremetal/utils'
+[2026-04-09 03:48:00] [baremetal-build] riscv64-unknown-elf-gcc -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/env -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/benchmarks/common -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/bootrom -I/home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-pk/machine -mcmodel=medany -static -ffast-math -fno-common -fno-builtin-printf -nostartfiles -nostdlib  -I/home/cz2931/esp/soft/common/drivers/baremetal/include -I/home/cz2931/esp/soft/common/drivers/baremetal/../common/include -I/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp -std=gnu99 -O2 -L/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../monitors -o /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/lstm.exe lstm.c /home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/common/syscalls.c /home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/benchmarks/common/crt.S -T /home/cz2931/esp/soft/common/drivers/baremetal/../../../ariane/riscv-tests/benchmarks/common/test.ld -lgcc -lm -lmonitors /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../probe/libprobe.a /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../monitors/libmonitors.a /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/../../utils/baremetal/libutils.a 
+[2026-04-09 03:48:00] [baremetal-build] riscv64-unknown-elf-objcopy -O binary  /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/lstm.exe /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/drivers/lstm_rtl/baremetal/lstm.bin
+[2026-04-09 03:48:00] [baremetal-build] make[1]: Leaving directory '/home/cz2931/esp/accelerators/rtl/lstm_rtl/sw/baremetal'
+[2026-04-09 03:48:00] [baremetal-build]     CP lstm_rtl-baremetal
+[2026-04-09 03:48:00] [baremetal-build]     CP lstm_rtl-baremetal
+[2026-04-09 03:48:00] END baremetal-build: returncode=0
+[2026-04-09 03:48:00] START sim: make sim TEST_PROGRAM=/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/lstm_rtl.exe
+[2026-04-09 03:48:00] [sim] Exported Cadence environment
+[2026-04-09 03:48:00] [sim] Exported Xilinx environment
+[2026-04-09 03:48:00] [sim] Exported Mentor environment
+[2026-04-09 03:48:00] [sim] Default Synopsys DC environment set
+[2026-04-09 03:48:00] [sim] Exported proFPGA v. 2021A environment
+[2026-04-09 03:48:00] [sim] Exported Leon3 tool-chain environment
+[2026-04-09 03:48:00] [sim] Exported RISCV tool-chain environment
+[2026-04-09 03:48:01] [sim]     MKDIR socketgen
+[2026-04-09 03:48:01] [sim]     RUN socketgen
+[2026-04-09 03:48:01] [sim]     WARNING: No caches found in /home/cz2931/esp/tech/virtex7/sccs.
+[2026-04-09 03:48:01] [sim]              Please check the "Use RTL" option in the "Cache Configuration" tab when configuring ESP.
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for NV_NVDLA
+[2026-04-09 03:48:01] [sim]           NV_NVDLA: NVIDIA, NVDLA small, ID 100
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping aescipher_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for aescipher_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for aescipher_rtl
+[2026-04-09 03:48:01] [sim]           aescipher_rtl_[basic_dma64]: Accelerator AESCIPHER, 4MB, ID 04a
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             aes_num_blocks, aes_num_blocks, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_4, aes_key_4, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_5, aes_key_5, 32bits, register 18, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_6, aes_key_6, 32bits, register 19, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_7, aes_key_7, 32bits, register 20, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_0, aes_key_0, 32bits, register 21, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_1, aes_key_1, 32bits, register 22, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_2, aes_key_2, 32bits, register 23, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_3, aes_key_3, 32bits, register 24, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping aesdecipher_v2_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for aesdecipher_v2_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for aesdecipher_v2_rtl
+[2026-04-09 03:48:01] [sim]           aesdecipher_v2_rtl_[basic_dma64]: Accelerator AESDECIPHER_V2, 4MB, ID 030
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             aes_num_blocks, aes_num_blocks, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_4, aes_key_4, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_5, aes_key_5, 32bits, register 18, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_6, aes_key_6, 32bits, register 19, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_7, aes_key_7, 32bits, register 20, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_0, aes_key_0, 32bits, register 21, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_1, aes_key_1, 32bits, register 22, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_2, aes_key_2, 32bits, register 23, def. value 0
+[2026-04-09 03:48:01] [sim]             aes_key_3, aes_key_3, 32bits, register 24, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping conv_new_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for conv_new_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for conv_new_rtl
+[2026-04-09 03:48:01] [sim]           conv_new_rtl_[basic_dma64]: Accelerator CONV_NEW, 4MB, ID 321
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             param_width, param_width, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             param_height, param_height, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping fcdnn_acc_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for fcdnn_acc_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for fcdnn_acc_rtl
+[2026-04-09 03:48:01] [sim]           fcdnn_acc_rtl_[basic_dma64]: Accelerator FCDNN_ACC, 4MB, ID 001
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             runs, runs, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             pipe_mode, pipe_mode, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]             exp_val, exp_val, 32bits, register 18, def. value 0
+[2026-04-09 03:48:01] [sim]             mux_cfg, mux_cfg, 32bits, register 19, def. value 0
+[2026-04-09 03:48:01] [sim]             array_size, array_size, 32bits, register 20, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping fft_64_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for fft_64_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for fft_64_rtl
+[2026-04-09 03:48:01] [sim]           fft_64_rtl_[basic_dma64]: Accelerator FFT_64, 4MB, ID 094
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             fft_points, fft_points, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping lstm_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for lstm_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for lstm_rtl
+[2026-04-09 03:48:01] [sim]           lstm_rtl_[basic_dma64]: Accelerator LSTM, 4MB, ID 031
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             num_timesteps, num_timesteps, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             hidden_dim, hidden_dim, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]             in_dim, in_dim, 32bits, register 18, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping sha256_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for sha256_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for sha256_rtl
+[2026-04-09 03:48:01] [sim]           sha256_rtl_[basic_dma64]: Accelerator SHA256, 4MB, ID 007
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             sha_mode, sha_mode, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             sha_msg_size, sha_msg_size, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping simple_dnn_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for simple_dnn_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for simple_dnn_rtl
+[2026-04-09 03:48:01] [sim]           simple_dnn_rtl_[basic_dma64]: Accelerator SIMPLE_DNN, 4MB, ID 005
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             num_hidden, num_hidden, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             num_out, num_out, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]             num_in, num_in, 32bits, register 18, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping sobel_v2_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for sobel_v2_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for sobel_v2_rtl
+[2026-04-09 03:48:01] [sim]           sobel_v2_rtl_[basic_dma64]: Accelerator SOBEL_V2, 4MB, ID 014
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             height, height, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             width, width, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: System DMA_WIDTH is 64; skipping spmv_rtl_basic_dma32
+[2026-04-09 03:48:01] [sim]     INFO: Found implementation basic_dma64 for spmv_rtl
+[2026-04-09 03:48:01] [sim]     INFO: Retrieving information for spmv_rtl
+[2026-04-09 03:48:01] [sim]           spmv_rtl_[basic_dma64]: Accelerator SPMV, 4MB, ID 0a1
+[2026-04-09 03:48:01] [sim]           {
+[2026-04-09 03:48:01] [sim]             spmv_vec_len, spmv_vec_len, 32bits, register 16, def. value 0
+[2026-04-09 03:48:01] [sim]             spmv_nnz, spmv_nnz, 32bits, register 17, def. value 0
+[2026-04-09 03:48:01] [sim]           }
+[2026-04-09 03:48:01] [sim]     INFO: Generating RTL to ./socketgen
+[2026-04-09 03:48:01] [sim]     MAKE socgen/esp/plic_regmap.sv
+[2026-04-09 03:48:01] [sim] strings: '/home/cz2931/esp/accelerators/third-party/NV_NVDLA/NV_NVDLA.verilog': No such file
+[2026-04-09 03:48:01] [sim]     BUILD /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/riscv.dtb
+[2026-04-09 03:48:01] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/startup.o
+[2026-04-09 03:48:01] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/uart.o
+[2026-04-09 03:48:01] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/main.o
+[2026-04-09 03:48:01] [sim]     CC /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/prom.exe
+[2026-04-09 03:48:01] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/prom.srec
+[2026-04-09 03:48:01] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/ram.srec
+[2026-04-09 03:48:01] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/prom.bin
+[2026-04-09 03:48:01] [sim]     OBJCP /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/systest.bin
+[2026-04-09 03:48:01] [sim] python3 /home/cz2931/esp/utils/scripts/file_handling/bin2txt.py ariane
+[2026-04-09 03:48:01] [sim] Read binary file soft-build/ariane/prom.bin
+[2026-04-09 03:48:01] [sim] Write text file soft-build/ariane/prom.txt
+[2026-04-09 03:48:01] [sim] Read binary file soft-build/ariane/systest.bin
+[2026-04-09 03:48:01] [sim] Write text file soft-build/ariane/systest.txt
+[2026-04-09 03:48:01] [sim]     MAKE sim-compile
+[2026-04-09 03:48:01] [sim] make[1]: Entering directory '/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/modelsim'
+[2026-04-09 03:48:01] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:01] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp/esp_global.vhd
+[2026-04-09 03:48:01] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:01] [sim] 	 -work work /home/cz2931/esp/rtl/misc/stdlib/config.vhd
+[2026-04-09 03:48:01] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:01] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/gencomp.vhd
+[2026-04-09 03:48:01] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:01] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/virtex7/pads_unisim.vhd
+[2026-04-09 03:48:02] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:02] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/virtex7/memory_unisim.vhd
+[2026-04-09 03:48:03] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:03] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/virtex7/ddr_unisim.vhd
+[2026-04-09 03:48:04] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:04] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/sld_devices.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/amba.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/uart/uart.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/genacc.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/devices.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/monitor/monitor_pkg.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/rtl/noc/nocpackage.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/csr/esp_csr_pkg.vhd
+[2026-04-09 03:48:05] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:05] [sim] 	 -work work /home/cz2931/esp/rtl/cores/leon3/leon3.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib/grlib_config.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/allcaches.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/rtl/misc/misc.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/rtl/caches/cachepackage.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp/socmap.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/tiles_pkg.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/csr/esp_noc_csr_pkg.vhd
+[2026-04-09 03:48:06] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:06] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/tile.vhd
+[2026-04-09 03:48:07] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:07] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/sldacc.vhd
+[2026-04-09 03:48:07] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:07] [sim] 	 -work work /home/cz2931/esp/rtl/sim/utils/sim.vhd
+[2026-04-09 03:48:07] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:07] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/video/svga_pkg.vhd
+[2026-04-09 03:48:07] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:07] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ethernet/net.vhd
+[2026-04-09 03:48:07] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:07] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/top.vhd
+[2026-04-09 03:48:08] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:08] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/dvfs/dvfs.vhd
+[2026-04-09 03:48:08] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:08] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/allclkgen.vhd
+[2026-04-09 03:48:08] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:08] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/dvfs/token_pm.vhd
+[2026-04-09 03:48:09] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:09] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/fpga/tiles_fpga_pkg.vhd
+[2026-04-09 03:48:09] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:09] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ddr/ahb2mig_7series_pkg.vhd
+[2026-04-09 03:48:09] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:09] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/tiles_asic_pkg.vhd
+[2026-04-09 03:48:09] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:09] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag_pkg.vhd
+[2026-04-09 03:48:09] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:09] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/tile_slm.vhd
+[2026-04-09 03:48:09] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:09] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/tile_mem.vhd
+[2026-04-09 03:48:09] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:09] [sim] 	 -work work /home/cz2931/esp/rtl/cores/ibex/ibex_esp_pkg.vhd
+[2026-04-09 03:48:10] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:10] [sim] 	 -work work /home/cz2931/esp/rtl/cores/ariane/ariane_esp_pkg.vhd
+[2026-04-09 03:48:10] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:10] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/timer/gptimer_pkg.vhd
+[2026-04-09 03:48:10] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:10] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/tile_io.vhd
+[2026-04-09 03:48:10] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:10] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/tile_empty.vhd
+[2026-04-09 03:48:10] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:10] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/tile_cpu.vhd
+[2026-04-09 03:48:10] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:10] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/tile_acc.vhd
+[2026-04-09 03:48:11] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:11] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/uart/libdcom.vhd
+[2026-04-09 03:48:11] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:11] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/testbench.vhd
+[2026-04-09 03:48:12] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:12] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/techmult.vhd
+[2026-04-09 03:48:12] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:12] [sim] 	 -work work /home/cz2931/esp/rtl/sim/tb/tb_pkg.vhd
+[2026-04-09 03:48:12] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:12] [sim] 	 -work work /home/cz2931/esp/rtl/sim/tb/tb_iolink.vhd
+[2026-04-09 03:48:12] [sim] ###### /home/cz2931/esp/rtl/sim/tb/tb_iolink.vhd(129):       if CPU_STR = "leon3" then
+[2026-04-09 03:48:12] [sim] ** Warning: /home/cz2931/esp/rtl/sim/tb/tb_iolink.vhd(129): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 6 is not equal to right length 5).
+[2026-04-09 03:48:12] [sim] ###### /home/cz2931/esp/rtl/sim/tb/tb_iolink.vhd(148):     if CPU_STR = "ibex" then
+[2026-04-09 03:48:12] [sim] ** Warning: /home/cz2931/esp/rtl/sim/tb/tb_iolink.vhd(148): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 6 is not equal to right length 4).
+[2026-04-09 03:48:12] [sim] ###### /home/cz2931/esp/rtl/sim/tb/tb_iolink.vhd(199):       if CPU_STR = "leon3" then
+[2026-04-09 03:48:12] [sim] ** Warning: /home/cz2931/esp/rtl/sim/tb/tb_iolink.vhd(199): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 6 is not equal to right length 5).
+[2026-04-09 03:48:12] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:12] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/syncreg.vhd
+[2026-04-09 03:48:12] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:12] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/syncrambw.vhd
+[2026-04-09 03:48:12] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:12] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/syncram_dp.vhd
+[2026-04-09 03:48:12] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:12] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/syncram_2p.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/syncram64.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/syncram.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/rtl/noc/sync_noc_xy.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/rtl/noc/sync_noc_set.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/rtl/noc/sync_noc32_xy.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/video/svgactrl.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/video/svga2tfp410.vhd
+[2026-04-09 03:48:13] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:13] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/allacc.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/accelerators.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/queues/slm_tile_q.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/virtex7/sgmii_vcu118.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/virtex7/sgmii_vc707.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/rtl/misc/rstgen.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/rtl/noc/router.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/rtl/cores/ariane/riscv_plic_apb_wrap.vhd
+[2026-04-09 03:48:14] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:14] [sim] 	 -work work /home/cz2931/esp/rtl/cores/ariane/riscv_clint_ahb_wrap.vhd
+[2026-04-09 03:48:15] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:15] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/regfile_3p.vhd
+[2026-04-09 03:48:15] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:15] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/dvfs/pm2noc.vhd
+[2026-04-09 03:48:15] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:15] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/virtex7/clkgen_unisim.vhd
+[2026-04-09 03:48:16] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:16] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/pll.vhd
+[2026-04-09 03:48:16] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:16] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:16] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:16] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:16] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:16] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:16] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:16] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:16] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:16] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp/plic_regmap.sv
+[2026-04-09 03:48:16] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:16] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/patient_apbctrl.vhd
+[2026-04-09 03:48:16] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:16] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/allpads.vhd
+[2026-04-09 03:48:16] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:16] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/outpad.vhd
+[2026-04-09 03:48:16] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:16] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/outpad_ds.vhd
+[2026-04-09 03:48:17] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:17] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/allddr.vhd
+[2026-04-09 03:48:17] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:17] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/outpad_ddr.vhd
+[2026-04-09 03:48:17] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:17] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_spmv_rtl.vhd
+[2026-04-09 03:48:17] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:17] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_sobel_v2_rtl.vhd
+[2026-04-09 03:48:17] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:17] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_simple_dnn_rtl.vhd
+[2026-04-09 03:48:17] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:17] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_sha256_rtl.vhd
+[2026-04-09 03:48:17] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:17] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_NV_NVDLA.vhd
+[2026-04-09 03:48:18] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:18] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_lstm_rtl.vhd
+[2026-04-09 03:48:18] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:18] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_fft_64_rtl.vhd
+[2026-04-09 03:48:18] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:18] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_fcdnn_acc_rtl.vhd
+[2026-04-09 03:48:18] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:18] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/sockets/noc_domain_socket.vhd
+[2026-04-09 03:48:18] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:18] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_conv_new_rtl.vhd
+[2026-04-09 03:48:18] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:18] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_aesdecipher_v2_rtl.vhd
+[2026-04-09 03:48:18] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:18] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/noc_aescipher_rtl.vhd
+[2026-04-09 03:48:19] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:19] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/muxes/noc5_mux.vhd
+[2026-04-09 03:48:19] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:19] [sim] 	 -work work /home/cz2931/esp/rtl/noc/noc32_xy.vhd
+[2026-04-09 03:48:19] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:19] [sim] 	 -work work /home/cz2931/esp/rtl/noc/noc32_synchronizers.vhd
+[2026-04-09 03:48:19] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:19] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/noc2intreq.vhd
+[2026-04-09 03:48:19] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:19] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/noc2apb.vhd
+[2026-04-09 03:48:19] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:19] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/noc2ahbmst.vhd
+[2026-04-09 03:48:19] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:19] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/monitor/monitor.vhd
+[2026-04-09 03:48:20] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:20] [sim] 	 -work work /home/cz2931/esp/rtl/cores/leon3/mmuiface.vhd
+[2026-04-09 03:48:21] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:21] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/queues/misc_tile_q.vhd
+[2026-04-09 03:48:21] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:21] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/memrwcol.vhd
+[2026-04-09 03:48:21] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:21] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/queues/mem_tile_q.vhd
+[2026-04-09 03:48:21] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:21] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/mem2ext.vhd
+[2026-04-09 03:48:21] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:21] [sim] 	 -work work /home/cz2931/esp/rtl/caches/gencaches.vhd
+[2026-04-09 03:48:21] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:21] [sim] 	 -work work /home/cz2931/esp/rtl/caches/llc_wrapper.vhd
+[2026-04-09 03:48:21] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:21] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:21] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:21] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:21] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:21] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:21] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:21] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:21] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:21] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_update.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_update.sv
+[2026-04-09 03:48:22] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socketgen/caches.vhd
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_rtl_top.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_rtl_top.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_regs.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_regs.sv
+[2026-04-09 03:48:22] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:22] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:22] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:22] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:22] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:22] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_process_request.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_process_request.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_lookup_way.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_lookup_way.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_localmem.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_localmem_asic.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_localmem_asic.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_localmem.sv
+[2026-04-09 03:48:23] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:23] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:23] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:23] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:23] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:23] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interfaces.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interfaces.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_input_decoder.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_input_decoder.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_core.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_core.sv
+[2026-04-09 03:48:24] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:24] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:24] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:24] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:24] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:24] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_bufs.sv
+[2026-04-09 03:48:25] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:25] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:25] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:25] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_bufs.sv
+[2026-04-09 03:48:25] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:25] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:25] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:25] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/llc/rtl/llc_interface_defs.sv
+[2026-04-09 03:48:25] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:25] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:25] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:25] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:25] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:25] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/cores/leon3/libmmu.vhd
+[2026-04-09 03:48:25] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/cores/leon3/libfpu.vhd
+[2026-04-09 03:48:25] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/cores/leon3/libiu.vhd
+[2026-04-09 03:48:25] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/cores/leon3/libcache.vhd
+[2026-04-09 03:48:25] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:25] [sim] 	 -work work /home/cz2931/esp/rtl/cores/leon3/libleon3.vhd
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_write_word.sv
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_write_word.sv
+[2026-04-09 03:48:26] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/l2_wrapper.vhd
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_rtl_top.sv
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_rtl_top.sv
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_reqs.sv
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_reqs.sv
+[2026-04-09 03:48:26] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:26] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:26] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:26] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:26] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:26] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_regs.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_regs.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_lookup.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_lookup.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_localmem.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_localmem_asic.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_localmem_asic.sv
+[2026-04-09 03:48:27] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:27] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:27] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:27] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:27] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:27] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_localmem.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interfaces.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interfaces.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_input_decoder.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_input_decoder.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_fsm.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_fsm.sv
+[2026-04-09 03:48:28] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:28] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:28] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:28] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:28] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:28] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:29] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:29] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:29] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:29] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_core.sv
+[2026-04-09 03:48:29] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:29] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:29] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:29] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_core.sv
+[2026-04-09 03:48:29] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:29] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:29] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:29] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_bufs.sv
+[2026-04-09 03:48:29] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:29] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:29] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:29] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:29] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_bufs.sv
+[2026-04-09 03:48:29] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/caches/l2_acc_wrapper.vhd
+[2026-04-09 03:48:29] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag_test.vhd
+[2026-04-09 03:48:29] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag_tb.vhd
+[2026-04-09 03:48:29] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:29] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag_apb_slv_config.vhd
+[2026-04-09 03:48:30] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:30] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag_apb_slv.vhd
+[2026-04-09 03:48:30] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:30] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag_apb_config.vhd
+[2026-04-09 03:48:30] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:30] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag2apb_reg.vhd
+[2026-04-09 03:48:30] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:30] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/jtag2apb.vhd
+[2026-04-09 03:48:30] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:30] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/interrupt/irqmp.vhd
+[2026-04-09 03:48:30] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:30] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/iopad.vhd
+[2026-04-09 03:48:30] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:30] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/iopad_tm.vhd
+[2026-04-09 03:48:31] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:31] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/iopad_ds.vhd
+[2026-04-09 03:48:31] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:31] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/iopad_ddr.vhd
+[2026-04-09 03:48:31] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:31] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/iolink2ahbm.vhd
+[2026-04-09 03:48:31] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:31] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/intreq2noc.vhd
+[2026-04-09 03:48:31] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:31] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:31] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:31] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:31] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/common/rtl/interface_controller.sv
+[2026-04-09 03:48:31] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:31] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:31] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:31] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:31] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:31] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/common/rtl/interface_controller.sv
+[2026-04-09 03:48:31] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:31] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/intack2noc.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/inpad.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/inpad_ds.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/inpad_ddr.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/grgates.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ethernet/grethm.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ethernet/ethernet_mac.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ethernet/greth.vhd
+[2026-04-09 03:48:32] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:32] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/timer/gptimer.vhd
+[2026-04-09 03:48:33] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:33] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/inferred/fifo_inferred.vhd
+[2026-04-09 03:48:33] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:33] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/fpga/fpga_tile_slm.vhd
+[2026-04-09 03:48:33] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:33] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/fpga/fpga_tile_mem.vhd
+[2026-04-09 03:48:33] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:33] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/fpga/fpga_tile_io.vhd
+[2026-04-09 03:48:33] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:33] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/fpga/fpga_tile_empty.vhd
+[2026-04-09 03:48:33] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:33] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/fpga/fpga_tile_cpu.vhd
+[2026-04-09 03:48:34] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:34] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/fpga/fpga_tile_acc.vhd
+[2026-04-09 03:48:34] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:34] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/fpga_proxy_jtag.vhd
+[2026-04-09 03:48:34] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:34] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/fixen_64to32.vhd
+[2026-04-09 03:48:34] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:34] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/ext2ahbm.vhd
+[2026-04-09 03:48:34] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:34] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/csr/esp_tile_csr.vhd
+[2026-04-09 03:48:34] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:34] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/csr/esp_noc_csr.vhd
+[2026-04-09 03:48:34] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:34] [sim] 	 -work work /home/cz2931/esp/rtl/misc/esp_init.vhd
+[2026-04-09 03:48:35] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:35] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/esp_acc_tlb.vhd
+[2026-04-09 03:48:35] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:35] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/esp_acc_dma.vhd
+[2026-04-09 03:48:35] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:35] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/esp.vhd
+[2026-04-09 03:48:35] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:35] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/queues/empty_tile_q.vhd
+[2026-04-09 03:48:35] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:35] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/dvfs/dvfs_top.vhd
+[2026-04-09 03:48:35] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:35] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/dvfs/dvfs_fsm.vhd
+[2026-04-09 03:48:35] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:35] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/ddr_oreg.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/ddr_ireg.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/uart/dcom.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/dco.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/queues/cpu_tile_q.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/clkpad_ds.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/clkpad.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/clkmux.vhd
+[2026-04-09 03:48:36] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:36] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/clkgen.vhd
+[2026-04-09 03:48:37] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:37] [sim] 	 -work work /home/cz2931/esp/rtl/techmap/maps/clkand.vhd
+[2026-04-09 03:48:37] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:37] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/axislv2noc.vhd
+[2026-04-09 03:48:37] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:37] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/asic_tile_slm_ddr.vhd
+[2026-04-09 03:48:37] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:37] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/asic_tile_slm.vhd
+[2026-04-09 03:48:37] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:37] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/asic_tile_mem.vhd
+[2026-04-09 03:48:37] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:37] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/asic_tile_io.vhd
+[2026-04-09 03:48:38] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:38] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/asic_tile_empty.vhd
+[2026-04-09 03:48:38] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:38] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/asic_tile_cpu.vhd
+[2026-04-09 03:48:38] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:38] [sim] 	 -work work /home/cz2931/esp/rtl/tiles/asic/asic_tile_acc.vhd
+[2026-04-09 03:48:38] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:38] [sim] 	 -work work /home/cz2931/esp/rtl/cores/ariane/ariane_axi_wrap.vhd
+[2026-04-09 03:48:38] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:38] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/uart/apbuart.vhd
+[2026-04-09 03:48:38] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:38] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/apb2noc.vhd
+[2026-04-09 03:48:38] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:38] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/apb2jtag_reg.vhd
+[2026-04-09 03:48:39] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:39] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/jtag/apb2jtag.vhd
+[2026-04-09 03:48:39] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:39] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/ahbtrace_mmb.vhd
+[2026-04-09 03:48:39] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:39] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/ahbtrace_mb.vhd
+[2026-04-09 03:48:39] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:39] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/ahbtrace.vhd
+[2026-04-09 03:48:39] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:39] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/ahbslv2noc.vhd
+[2026-04-09 03:48:39] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:39] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/proxy/ahbslv2iolink.vhd
+[2026-04-09 03:48:39] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:39] [sim] 	 -work work /home/cz2931/esp/rtl/misc/ahbslm.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/sim/models/ahbram_sim.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/misc/ahbram_dp.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/misc/ahbram.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/ahbmst.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/bus/ahbctrl.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ddr/ahb2mig_up.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ddr/ahb2mig_ebddr4r5.vhd
+[2026-04-09 03:48:40] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:40] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ddr/ahb2mig_7series_profpga.vhd
+[2026-04-09 03:48:41] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:41] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ddr/ahb2mig_7series.vhd
+[2026-04-09 03:48:41] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:41] [sim] 	 -work work /home/cz2931/esp/rtl/peripherals/ddr/ahb2bsg_dmc.vhd
+[2026-04-09 03:48:41] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:41] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/adapters/ahb2axi_l.vhd
+[2026-04-09 03:48:41] [sim] vlog -sv -quiet -incr -nologo -suppress \
+[2026-04-09 03:48:41] [sim] 	 13262 -suppress 2286 -permissive +define+WT_DCACHE \
+[2026-04-09 03:48:41] [sim] 	 -pedanticerrors -suppress 2583 -suppress \
+[2026-04-09 03:48:41] [sim] 	 2275 -suppress 2583 -suppress 2892 +define+XILINX_FPGA \
+[2026-04-09 03:48:41] [sim] 	 +incdir+/home/cz2931/esp/rtl/cores/ariane/ariane/src/common_cells/include \
+[2026-04-09 03:48:41] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t \
+[2026-04-09 03:48:41] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/grlib \
+[2026-04-09 03:48:41] [sim] 	 +incdir+/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/socgen/esp \
+[2026-04-09 03:48:41] [sim] 	 +incdir+/home/cz2931/esp/rtl/caches/esp-caches/common/defs \
+[2026-04-09 03:48:41] [sim] 	 -work work /home/cz2931/esp/rtl/caches/esp-caches/l2/rtl/l2_interface_defs.sv
+[2026-04-09 03:48:41] [sim] vcom -suppress vcom-1491 -quiet -93 \
+[2026-04-09 03:48:41] [sim] 	 -work work /home/cz2931/esp/rtl/sockets/queues/acc_tile_q.vhd
+[2026-04-09 03:48:41] [sim] make[1]: Leaving directory '/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/modelsim'
+[2026-04-09 03:48:41] [sim]     RUN sim
+[2026-04-09 03:48:42] [sim] Reading pref.tcl
+[2026-04-09 03:48:42] [sim] 
+[2026-04-09 03:48:42] [sim] # 2023.2
+[2026-04-09 03:48:42] [sim] 
+[2026-04-09 03:48:42] [sim] # vsim "+UVM_NO_RELNOTES" "+permissive-off" -voptargs="+acc" -suppress 3812 -suppress 2697 -suppress 8617 -suppress 151 -suppress 143 -suppress 8386 -suppress 3009,2685,2718 -L secureip_ver -L unisims_ver -uvmcontrol=disable -t fs "+notimingchecks" testbench glbl -c -do "do /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/vsim.tcl" 
+[2026-04-09 03:48:42] [sim] # Start time: 03:48:42 on Apr 09,2026
+[2026-04-09 03:48:42] [sim] # //  ModelSim DE 2023.2 Apr 11 2023 Linux 4.18.0-553.63.1.el8_10.x86_64
+[2026-04-09 03:48:42] [sim] # //
+[2026-04-09 03:48:42] [sim] # //  Copyright 1991-2023 Mentor Graphics Corporation
+[2026-04-09 03:48:42] [sim] # //  All Rights Reserved.
+[2026-04-09 03:48:42] [sim] # //
+[2026-04-09 03:48:42] [sim] # //  ModelSim DE and its associated documentation contain trade
+[2026-04-09 03:48:42] [sim] # //  secrets and commercial or financial information that are the property of
+[2026-04-09 03:48:42] [sim] # //  Mentor Graphics Corporation and are privileged, confidential,
+[2026-04-09 03:48:42] [sim] # //  and exempt from disclosure under the Freedom of Information Act,
+[2026-04-09 03:48:42] [sim] # //  5 U.S.C. Section 552. Furthermore, this information
+[2026-04-09 03:48:42] [sim] # //  is prohibited from disclosure under the Trade Secrets Act,
+[2026-04-09 03:48:42] [sim] # //  18 U.S.C. Section 1905.
+[2026-04-09 03:48:42] [sim] # //
+[2026-04-09 03:48:43] [sim] # Loading std.standard
+[2026-04-09 03:48:43] [sim] # Loading std.textio(body)
+[2026-04-09 03:48:43] [sim] # Loading ieee.std_logic_1164(body)
+[2026-04-09 03:48:43] [sim] # Loading ieee.numeric_std(body)
+[2026-04-09 03:48:43] [sim] # Loading work.esp_global
+[2026-04-09 03:48:43] [sim] # Loading work.config_types
+[2026-04-09 03:48:43] [sim] # Loading work.config
+[2026-04-09 03:48:43] [sim] # Loading work.version
+[2026-04-09 03:48:43] [sim] # Loading work.stdlib(body)
+[2026-04-09 03:48:43] [sim] # Loading work.gencomp
+[2026-04-09 03:48:43] [sim] # Loading work.sld_devices
+[2026-04-09 03:48:43] [sim] # Loading work.amba(body)
+[2026-04-09 03:48:43] [sim] # Loading work.uart
+[2026-04-09 03:48:43] [sim] # Loading work.libdcom(body)
+[2026-04-09 03:48:43] [sim] # Loading work.stdio(body)
+[2026-04-09 03:48:43] [sim] # Loading work.devices
+[2026-04-09 03:48:43] [sim] # Loading work.sim(body)
+[2026-04-09 03:48:43] [sim] # Loading work.grlib_config
+[2026-04-09 03:48:43] [sim] # Loading work.coretypes
+[2026-04-09 03:48:43] [sim] # Loading work.leon3
+[2026-04-09 03:48:43] [sim] # Loading work.misc(body)
+[2026-04-09 03:48:43] [sim] # Loading work.net
+[2026-04-09 03:48:43] [sim] # Loading work.svga_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.genacc
+[2026-04-09 03:48:43] [sim] # Loading work.esp_acc_regmap(body)
+[2026-04-09 03:48:43] [sim] # Loading work.monitor_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.nocpackage(body)
+[2026-04-09 03:48:43] [sim] # Loading work.allcaches
+[2026-04-09 03:48:43] [sim] # Loading work.cachepackage(body)
+[2026-04-09 03:48:43] [sim] # Loading work.sldacc
+[2026-04-09 03:48:43] [sim] # Loading work.esp_noc_csr_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.tile
+[2026-04-09 03:48:43] [sim] # Loading work.socmap
+[2026-04-09 03:48:43] [sim] # Loading work.esp_csr_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.tiles_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.testbench(behav)
+[2026-04-09 03:48:43] [sim] # Loading sv_std.std
+[2026-04-09 03:48:43] [sim] # Loading work.glbl
+[2026-04-09 03:48:43] [sim] # Loading work.top(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.allpads
+[2026-04-09 03:48:43] [sim] # Loading work.outpad(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.unisim_outpad(rtl)
+[2026-04-09 03:48:43] [sim] # Loading ieee.vital_timing(body)
+[2026-04-09 03:48:43] [sim] # Loading ieee.vital_primitives(body)
+[2026-04-09 03:48:43] [sim] # Loading unisim.vpkg(body)
+[2026-04-09 03:48:43] [sim] # Loading unisim.obuf(obuf_v)
+[2026-04-09 03:48:43] [sim] # Loading work.iopad(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.unisim_iopad(rtl)
+[2026-04-09 03:48:43] [sim] # Loading unisim.iobuf(iobuf_v)
+[2026-04-09 03:48:43] [sim] # Loading work.inpad(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.unisim_inpad(rtl)
+[2026-04-09 03:48:43] [sim] # Loading unisim.ibuf(ibuf_v)
+[2026-04-09 03:48:43] [sim] # Loading work.rstgen(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.allclkgen
+[2026-04-09 03:48:43] [sim] # Loading work.clkgen(struct)
+[2026-04-09 03:48:43] [sim] # Loading work.clkgen_virtex7(struct)
+[2026-04-09 03:48:43] [sim] # Loading ieee.std_logic_arith(body)
+[2026-04-09 03:48:43] [sim] # Loading ieee.std_logic_signed(body)
+[2026-04-09 03:48:43] [sim] # Loading unisim.plle2_adv(plle2_adv_v)
+[2026-04-09 03:48:43] [sim] # Loading unisim.bufg(bufg_v)
+[2026-04-09 03:48:43] [sim] # Loading work.report_version(beh)
+[2026-04-09 03:48:43] [sim] # Loading work.ahbram_sim(rtl)
+[2026-04-09 03:48:43] [sim] # Loading synopsys.attributes
+[2026-04-09 03:48:43] [sim] # Loading ieee.std_logic_misc(body)
+[2026-04-09 03:48:43] [sim] # Loading work.tiles_fpga_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.esp(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.jtag_pkg
+[2026-04-09 03:48:43] [sim] # Loading ieee.std_logic_textio(body)
+[2026-04-09 03:48:43] [sim] # Loading work.dvfs(body)
+[2026-04-09 03:48:43] [sim] # Loading work.noc_domain_socket(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.noc32_synchronizers(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.genram_pkg(body)
+[2026-04-09 03:48:43] [sim] # Loading work.inferred_async_fifo(syn)
+[2026-04-09 03:48:43] [sim] # Loading ieee.std_logic_unsigned(body)
+[2026-04-09 03:48:43] [sim] # Loading work.sync_noc_set(mesh)
+[2026-04-09 03:48:43] [sim] # Loading work.sync_noc_xy(mesh)
+[2026-04-09 03:48:43] [sim] # Loading work.router(behavior)
+[2026-04-09 03:48:43] [sim] # Loading work.noc
+[2026-04-09 03:48:43] [sim] # Loading work.lookahead_router_wrapper
+[2026-04-09 03:48:43] [sim] # Loading work.lookahead_router
+[2026-04-09 03:48:43] [sim] # Loading work.router_fifo
+[2026-04-09 03:48:43] [sim] # Loading work.lookahead_routing
+[2026-04-09 03:48:43] [sim] # Loading work.router_arbiter
+[2026-04-09 03:48:43] [sim] # Loading work.noc5_mux(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.fifo0(behavior)
+[2026-04-09 03:48:43] [sim] # Loading work.esp_noc_csr(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.noc2apb(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.fpga_tile_mem(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_esp_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.jtag_test(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.tile_mem(rtl)
+[2026-04-09 03:48:43] [sim] # Loading ieee.math_real(body)
+[2026-04-09 03:48:43] [sim] # Loading work.testlib(body)
+[2026-04-09 03:48:43] [sim] # Loading work.ahbctrl(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.esp_tile_csr(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.noc2ahbmst(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.gencaches
+[2026-04-09 03:48:43] [sim] # Loading work.llc_wrapper(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.llc(mapping)
+[2026-04-09 03:48:43] [sim] # Loading work.llc_rtl_top_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_rtl_top
+[2026-04-09 03:48:43] [sim] # Loading work.llc_interface_defs_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_req_in_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_dma_req_in_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_rsp_in_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_mem_rsp_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_rsp_out_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_dma_rsp_out_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_fwd_out_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_mem_req_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_core_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_core
+[2026-04-09 03:48:43] [sim] # Loading work.line_breakdown_llc_t
+[2026-04-09 03:48:43] [sim] # Loading work.llc_regs_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_regs
+[2026-04-09 03:48:43] [sim] # Loading work.llc_input_decoder_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_input_decoder
+[2026-04-09 03:48:43] [sim] # Loading work.llc_interfaces_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_interfaces
+[2026-04-09 03:48:43] [sim] # Loading work.interface_controller_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.interface_controller
+[2026-04-09 03:48:43] [sim] # Loading work.llc_localmem_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_localmem
+[2026-04-09 03:48:43] [sim] # Loading work.llc_update_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_update
+[2026-04-09 03:48:43] [sim] # Loading work.llc_bufs_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_bufs
+[2026-04-09 03:48:43] [sim] # Loading work.llc_lookup_way_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_lookup_way
+[2026-04-09 03:48:43] [sim] # Loading work.pri_enc
+[2026-04-09 03:48:43] [sim] # Loading work.pri_enc_half
+[2026-04-09 03:48:43] [sim] # Loading work.llc_process_request_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.llc_process_request
+[2026-04-09 03:48:43] [sim] # Loading work.BRAM_4096x4
+[2026-04-09 03:48:43] [sim] # Loading unisims_ver.RAMB16_S4_S4
+[2026-04-09 03:48:43] [sim] # Loading unisims_ver.RAMB18E1
+[2026-04-09 03:48:43] [sim] # Loading work.BRAM_1024x16
+[2026-04-09 03:48:43] [sim] # Loading unisims_ver.RAMB16_S18_S18
+[2026-04-09 03:48:43] [sim] # Loading work.BRAM_16384x1
+[2026-04-09 03:48:43] [sim] # Loading unisims_ver.RAMB16_S1_S1
+[2026-04-09 03:48:43] [sim] # Loading work.BRAM_2048x8
+[2026-04-09 03:48:43] [sim] # Loading unisims_ver.RAMB16_S9_S9
+[2026-04-09 03:48:43] [sim] # Loading unisims_ver.RB18_INTERNAL_VLOG
+[2026-04-09 03:48:43] [sim] # Loading work.mem_tile_q(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.fifo2(behavior)
+[2026-04-09 03:48:43] [sim] # Loading work.fpga_tile_cpu(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.ibex_esp_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.tile_cpu(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_axi_wrap(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.axi_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_soc
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_axi
+[2026-04-09 03:48:43] [sim] # Loading work.riscv
+[2026-04-09 03:48:43] [sim] # Loading work.dm
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_wrap
+[2026-04-09 03:48:43] [sim] # Loading work.axi_node_wrap_with_slices
+[2026-04-09 03:48:43] [sim] # Loading work.axi_node_intf_wrap
+[2026-04-09 03:48:43] [sim] # Loading work.axi_node
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.ariane
+[2026-04-09 03:48:43] [sim] # Loading work.frontend_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.frontend
+[2026-04-09 03:48:43] [sim] # Loading work.instr_realign_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.instr_realign
+[2026-04-09 03:48:43] [sim] # Loading work.ras
+[2026-04-09 03:48:43] [sim] # Loading work.btb
+[2026-04-09 03:48:43] [sim] # Loading work.bht
+[2026-04-09 03:48:43] [sim] # Loading work.instr_queue
+[2026-04-09 03:48:43] [sim] # Loading work.lzc
+[2026-04-09 03:48:43] [sim] # Loading work.popcount
+[2026-04-09 03:48:43] [sim] # Loading work.fifo_v3
+[2026-04-09 03:48:43] [sim] # Loading work.id_stage
+[2026-04-09 03:48:43] [sim] # Loading work.compressed_decoder_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.compressed_decoder
+[2026-04-09 03:48:43] [sim] # Loading work.decoder_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.decoder
+[2026-04-09 03:48:43] [sim] # Loading work.issue_stage_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.issue_stage
+[2026-04-09 03:48:43] [sim] # Loading work.re_name_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.re_name
+[2026-04-09 03:48:43] [sim] # Loading work.scoreboard
+[2026-04-09 03:48:43] [sim] # Loading work.rr_arb_tree
+[2026-04-09 03:48:43] [sim] # Loading work.issue_read_operands_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.issue_read_operands
+[2026-04-09 03:48:43] [sim] # Loading work.ariane_regfile
+[2026-04-09 03:48:43] [sim] # Loading work.ex_stage_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.ex_stage
+[2026-04-09 03:48:43] [sim] # Loading work.alu_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.alu
+[2026-04-09 03:48:43] [sim] # Loading work.branch_unit
+[2026-04-09 03:48:43] [sim] # Loading work.csr_buffer_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.csr_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.mult_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.mult
+[2026-04-09 03:48:43] [sim] # Loading work.multiplier_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.multiplier
+[2026-04-09 03:48:43] [sim] # Loading work.serdiv_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.serdiv
+[2026-04-09 03:48:43] [sim] # Loading work.load_store_unit_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.load_store_unit
+[2026-04-09 03:48:43] [sim] # Loading work.mmu_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.mmu
+[2026-04-09 03:48:43] [sim] # Loading work.tlb_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.tlb
+[2026-04-09 03:48:43] [sim] # Loading work.ptw_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.ptw
+[2026-04-09 03:48:43] [sim] # Loading work.store_unit_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.store_unit
+[2026-04-09 03:48:43] [sim] # Loading work.store_buffer_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.store_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.amo_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.load_unit
+[2026-04-09 03:48:43] [sim] # Loading work.shift_reg
+[2026-04-09 03:48:43] [sim] # Loading work.lsu_bypass
+[2026-04-09 03:48:43] [sim] # Loading work.commit_stage_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.commit_stage
+[2026-04-09 03:48:43] [sim] # Loading work.csr_regfile_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.csr_regfile
+[2026-04-09 03:48:43] [sim] # Loading work.perf_counters_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.perf_counters
+[2026-04-09 03:48:43] [sim] # Loading work.controller_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.controller
+[2026-04-09 03:48:43] [sim] # Loading work.wt_cache_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.wt_cache_subsystem_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_cache_subsystem
+[2026-04-09 03:48:43] [sim] # Loading work.wt_icache_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_icache
+[2026-04-09 03:48:43] [sim] # Loading work.lfsr_8bit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_missunit_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_missunit
+[2026-04-09 03:48:43] [sim] # Loading work.exp_backoff
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_wbuffer_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_wbuffer
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_inval_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_inval
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_mem_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_mem
+[2026-04-09 03:48:43] [sim] # Loading work.wt_axi_adapter_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_axi_adapter
+[2026-04-09 03:48:43] [sim] # Loading work.std_cache_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.axi_shim_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.axi_shim
+[2026-04-09 03:48:43] [sim] # Loading work.instr_tracer_if
+[2026-04-09 03:48:43] [sim] # Loading work.instr_tracer_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.instr_tracer_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.instr_tracer
+[2026-04-09 03:48:43] [sim] # Loading work.axi_master_connect
+[2026-04-09 03:48:43] [sim] # Loading work.axi2apb_64_32
+[2026-04-09 03:48:43] [sim] # Loading work.axi_aw_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.axi_single_slice
+[2026-04-09 03:48:43] [sim] # Loading work.fifo
+[2026-04-09 03:48:43] [sim] # Loading work.fifo_v2
+[2026-04-09 03:48:43] [sim] # Loading work.axi_ar_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.axi_w_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.axi_r_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.axi_b_buffer
+[2026-04-09 03:48:43] [sim] # Loading work.axi_intf_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.AXI_BUS
+[2026-04-09 03:48:43] [sim] # Loading work.axi_riscv_atomics_wrap
+[2026-04-09 03:48:43] [sim] # Loading work.axi_riscv_atomics
+[2026-04-09 03:48:43] [sim] # Loading work.axi_riscv_amos
+[2026-04-09 03:48:43] [sim] # Loading work.axi_riscv_amos_alu
+[2026-04-09 03:48:43] [sim] # Loading work.axi_riscv_lrsc
+[2026-04-09 03:48:43] [sim] # Loading work.axi_res_tbl
+[2026-04-09 03:48:43] [sim] # Loading work.stream_arbiter
+[2026-04-09 03:48:43] [sim] # Loading work.stream_arbiter_flushable
+[2026-04-09 03:48:43] [sim] # Loading work.instr_scan
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_pkg
+[2026-04-09 03:48:43] [sim] # Loading work.fpu_wrap_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.fpu_wrap
+[2026-04-09 03:48:43] [sim] # Loading work.sram
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_ctrl_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.wt_dcache_ctrl
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_top
+[2026-04-09 03:48:43] [sim] # Loading work.SyncSpRamBeNx64
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_opgroup_block
+[2026-04-09 03:48:43] [sim] # Loading work.axi_multicut_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.axi_multicut
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_opgroup_fmt_slice
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_opgroup_multifmt_slice
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_fma
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_classifier
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_rounding
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_divsqrt_multi
+[2026-04-09 03:48:43] [sim] # Loading work.defs_div_sqrt_mvp
+[2026-04-09 03:48:43] [sim] # Loading work.div_sqrt_top_mvp_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.div_sqrt_top_mvp
+[2026-04-09 03:48:43] [sim] # Loading work.preprocess_mvp_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.preprocess_mvp
+[2026-04-09 03:48:43] [sim] # Loading work.nrbd_nrsc_mvp_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.nrbd_nrsc_mvp
+[2026-04-09 03:48:43] [sim] # Loading work.control_mvp_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.control_mvp
+[2026-04-09 03:48:43] [sim] # Loading work.norm_div_sqrt_mvp_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.norm_div_sqrt_mvp
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_noncomp
+[2026-04-09 03:48:43] [sim] # Loading work.fpnew_cast_multi
+[2026-04-09 03:48:43] [sim] # Loading work.axi_cut_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.axi_cut
+[2026-04-09 03:48:43] [sim] # Loading work.spill_register
+[2026-04-09 03:48:43] [sim] # Loading work.axi_intf_bind_slv_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.axi_intf_bind_slv
+[2026-04-09 03:48:43] [sim] # Loading work.axi_intf_bind_mst_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.axi_intf_bind_mst
+[2026-04-09 03:48:43] [sim] # Loading work.iteration_div_sqrt_mvp
+[2026-04-09 03:48:43] [sim] # Loading work.axi_request_block
+[2026-04-09 03:48:43] [sim] # Loading work.axi_AR_allocator
+[2026-04-09 03:48:43] [sim] # Loading work.axi_node_arbiter
+[2026-04-09 03:48:43] [sim] # Loading work.axi_AW_allocator
+[2026-04-09 03:48:43] [sim] # Loading work.axi_DW_allocator
+[2026-04-09 03:48:43] [sim] # Loading work.axi_multiplexer
+[2026-04-09 03:48:43] [sim] # Loading work.axi_address_decoder_BW
+[2026-04-09 03:48:43] [sim] # Loading work.axi_address_decoder_BR
+[2026-04-09 03:48:43] [sim] # Loading work.axi_response_block
+[2026-04-09 03:48:43] [sim] # Loading work.axi_BW_allocator
+[2026-04-09 03:48:43] [sim] # Loading work.axi_BR_allocator
+[2026-04-09 03:48:43] [sim] # Loading work.axi_address_decoder_AR
+[2026-04-09 03:48:43] [sim] # Loading work.axi_address_decoder_AW
+[2026-04-09 03:48:43] [sim] # Loading work.axi_address_decoder_DW
+[2026-04-09 03:48:43] [sim] # Loading work.unread(dummy)
+[2026-04-09 03:48:43] [sim] # Loading work.l2_wrapper(rtl)
+[2026-04-09 03:48:43] [sim] # Loading work.l2(mapping)
+[2026-04-09 03:48:43] [sim] # Loading work.l2_rtl_top_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_rtl_top
+[2026-04-09 03:48:43] [sim] # Loading work.l2_interface_defs_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_cpu_req_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_fwd_in_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_rsp_in_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_req_out_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_rsp_out_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_rd_rsp_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_inval_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_core_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_core
+[2026-04-09 03:48:43] [sim] # Loading work.line_breakdown_l2_t
+[2026-04-09 03:48:43] [sim] # Loading work.addr_breakdown_t
+[2026-04-09 03:48:43] [sim] # Loading work.l2_bufs_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_bufs
+[2026-04-09 03:48:43] [sim] # Loading work.l2_fsm_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_fsm
+[2026-04-09 03:48:43] [sim] # Loading work.l2_interfaces_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_interfaces
+[2026-04-09 03:48:43] [sim] # Loading work.l2_input_decoder_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_input_decoder
+[2026-04-09 03:48:43] [sim] # Loading work.l2_localmem_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_localmem
+[2026-04-09 03:48:43] [sim] # Loading work.l2_lookup_sv_unit
+[2026-04-09 03:48:43] [sim] # Loading work.l2_lookup
+[2026-04-09 03:48:48] [sim] # Loading work.l2_regs_sv_unit
+[2026-04-09 03:48:48] [sim] # Loading work.l2_regs
+[2026-04-09 03:48:48] [sim] # Loading work.l2_reqs_sv_unit
+[2026-04-09 03:48:48] [sim] # Loading work.l2_reqs
+[2026-04-09 03:48:48] [sim] # Loading work.l2_write_word_sv_unit
+[2026-04-09 03:48:48] [sim] # Loading work.l2_write_word
+[2026-04-09 03:48:48] [sim] # Loading work.BRAM_8192x2
+[2026-04-09 03:48:48] [sim] # Loading unisims_ver.RAMB16_S2_S2
+[2026-04-09 03:48:48] [sim] # Loading work.fifo_custom(behavior)
+[2026-04-09 03:48:48] [sim] # Loading work.axislv2noc(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.apb2noc(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.intack2noc(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.cpu_tile_q(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.fpga_tile_acc(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.tile_acc(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.noc_lstm_rtl(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.allacc
+[2026-04-09 03:48:48] [sim] # Loading work.lstm_rtl_rtl(mapping)
+[2026-04-09 03:48:48] [sim] # Loading work.lstm_rtl_basic_dma64
+[2026-04-09 03:48:48] [sim] # Loading work.lstm
+[2026-04-09 03:48:48] [sim] # Loading work.spram_u
+[2026-04-09 03:48:48] [sim] # Loading work.spram_v
+[2026-04-09 03:48:48] [sim] # Loading work.spram_b
+[2026-04-09 03:48:48] [sim] # Loading work.lstm_top
+[2026-04-09 03:48:48] [sim] # Loading work.vecmat_mul_x
+[2026-04-09 03:48:48] [sim] # Loading work.signedmul
+[2026-04-09 03:48:48] [sim] # Loading work.vecmat_mul_h
+[2026-04-09 03:48:48] [sim] # Loading work.vecmat_add_x
+[2026-04-09 03:48:48] [sim] # Loading work.qadd2
+[2026-04-09 03:48:48] [sim] # Loading work.vecmat_add_h
+[2026-04-09 03:48:48] [sim] # Loading work.sigmoid
+[2026-04-09 03:48:48] [sim] # Loading work.tanh
+[2026-04-09 03:48:48] [sim] # Loading work.esp_acc_dma(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.esp_acc_tlb(tlb)
+[2026-04-09 03:48:48] [sim] # Loading work.allmem
+[2026-04-09 03:48:48] [sim] # Loading work.syncram(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.unisim_syncram(behav)
+[2026-04-09 03:48:48] [sim] # Loading work.generic_syncram(behavioral)
+[2026-04-09 03:48:48] [sim] # Loading work.acc_tile_q(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.fpga_tile_io(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.gptimer_pkg
+[2026-04-09 03:48:48] [sim] # Loading work.tile_io(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.patient_apbctrl(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.grethpkg(body)
+[2026-04-09 03:48:48] [sim] # Loading work.esp_init(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.eth_edcl_ahb_mst(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.apbuart(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.riscv_plic_apb_wrap(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.reg_intf
+[2026-04-09 03:48:48] [sim] # Loading work.riscv_plic_wrap
+[2026-04-09 03:48:48] [sim] # Loading work.REG_BUS
+[2026-04-09 03:48:48] [sim] # Loading work.apb_to_reg
+[2026-04-09 03:48:48] [sim] # Loading work.plic_top
+[2026-04-09 03:48:48] [sim] # Loading work.rv_plic_gateway
+[2026-04-09 03:48:48] [sim] # Loading work.plic_regs
+[2026-04-09 03:48:48] [sim] # Loading work.rv_plic_target
+[2026-04-09 03:48:48] [sim] # Loading work.riscv_clint_ahb_wrap(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.ahb2axi_l(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.riscv_clint_wrap
+[2026-04-09 03:48:48] [sim] # Loading work.clint
+[2026-04-09 03:48:48] [sim] # Loading work.axi_lite_interface
+[2026-04-09 03:48:48] [sim] # Loading work.clint_sync_wedge
+[2026-04-09 03:48:48] [sim] # Loading work.clint_sync
+[2026-04-09 03:48:48] [sim] # Loading work.esplink
+[2026-04-09 03:48:48] [sim] # Loading work.ahbslv2noc(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.intreq2noc(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.noc2intreq(rtl)
+[2026-04-09 03:48:48] [sim] # Loading work.misc_tile_q(rtl)
+[2026-04-09 03:48:48] [sim] # do /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/vsim.tcl
+[2026-04-09 03:49:08] [sim] # ahbctrl: AHB arbiter/multiplexer rev 1
+[2026-04-09 03:49:08] [sim] # ahbctrl: Common I/O area at 0xfff00000, 1 Mbyte
+[2026-04-09 03:49:08] [sim] # ahbctrl: AHB masters: 4, AHB slaves: 32
+[2026-04-09 03:49:08] [sim] # ahbctrl: Configuration area disabled
+[2026-04-09 03:49:08] [sim] # ahbctrl: mst2: Columbia University SLD bus-master proxy               
+[2026-04-09 03:49:08] [sim] # ahbctrl: mst3: Columbia University SLD ESP self init module           
+[2026-04-09 03:49:08] [sim] # ahbctrl: slv0: Cobham Gaisler          Single-port AHB SRAM module    
+[2026-04-09 03:49:08] [sim] # ahbctrl:       memory at 0x00000000, size 1 Mbyte, cacheable, prefetch
+[2026-04-09 03:49:08] [sim] # ahbctrl: slv1: Cobham Gaisler          AHB/APB Bridge                 
+[2026-04-09 03:49:08] [sim] # ahbctrl:       memory at 0x60000000, size 256 Mbyte
+[2026-04-09 03:49:08] [sim] # ahbctrl: slv2: SiFive                  RISC-V CPU Local Interruptor   
+[2026-04-09 03:49:08] [sim] # ahbctrl:       memory at 0x02000000, size 1 Mbyte
+[2026-04-09 03:49:08] [sim] # ahbctrl: slv4: Cobham Gaisler          Xilinx MIG DDR3 Controller     
+[2026-04-09 03:49:08] [sim] # ahbctrl:       memory at 0x80000000, size 1024 Mbyte, cacheable, prefetch
+[2026-04-09 03:49:08] [sim] # ahbctrl: AHB arbiter/multiplexer rev 1
+[2026-04-09 03:49:08] [sim] # ahbctrl: Common I/O area at 0xfff00000, 1 Mbyte
+[2026-04-09 03:49:08] [sim] # ahbctrl: AHB masters: 32, AHB slaves: 32
+[2026-04-09 03:49:08] [sim] # ahbctrl: Configuration area disabled
+[2026-04-09 03:49:08] [sim] # ahbctrl: mst0: Columbia University SLD bus-master proxy               
+[2026-04-09 03:49:08] [sim] # ahbctrl: mst1: Columbia University SLD bus-master proxy               
+[2026-04-09 03:49:08] [sim] # ahbctrl: mst2: Columbia University SLD LLC cache                      
+[2026-04-09 03:49:08] [sim] # ahbctrl: slv0: Cobham Gaisler          Xilinx MIG DDR3 Controller     
+[2026-04-09 03:49:08] [sim] # ahbctrl:       memory at 0x80000000, size 1024 Mbyte, cacheable, prefetch
+[2026-04-09 03:49:08] [sim] # apbctrl: APB Bridge at 0x60000000 rev 1
+[2026-04-09 03:49:08] [sim] # apbctrl: slv0: Columbia University SLD ESP tile ctrl & stats          
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60090600, size 512 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv1: Cobham Gaisler          Generic UART                   
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60000100, size 256 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv2: SiFive                  Platform Level Int. Controller 
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x6c000000, size 65536 kbyte
+[2026-04-09 03:49:08] [sim] # apbctrl: slv3: Cobham Gaisler          Modular Timer Unit             
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60000300, size 256 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv4: Columbia University SLD ESP SoC Link                   
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60000400, size 256 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv6: Cobham Gaisler          GR Ethernet MAC                
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60080000, size 64 kbyte
+[2026-04-09 03:49:08] [sim] # apbctrl: slv7: Cobham Gaisler          XILINX SGMII Interface         
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60001000, size 4 kbyte
+[2026-04-09 03:49:08] [sim] # apbctrl: slv8: Columbia University SLD L2 cache                       
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x6000d000, size 256 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv24: Columbia University SLD LLC cache                      
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x6000e000, size 256 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv40: Columbia University SLD ESP tile ctrl & stats          
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60090000, size 512 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv41: Columbia University SLD ESP tile ctrl & stats          
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60090200, size 512 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv42: Columbia University SLD ESP tile ctrl & stats          
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60090400, size 512 byte 
+[2026-04-09 03:49:08] [sim] # apbctrl: slv296: Columbia University SLD Accelerator LSTM               
+[2026-04-09 03:49:08] [sim] # apbctrl:       I/O ports at 0x60010000, size 512 byte 
+[2026-04-09 03:49:08] [sim] # apbuart1: Generic UART rev 1, fifo 32, irq 2, scaler bits 12
+[2026-04-09 03:49:08] [sim] # ahbram0: AHB SRAM Module rev 1, 128 kbytes
+[2026-04-09 03:49:08] [sim] # ahbram0: AHB SRAM Module rev 1, 2048 kbytes
+[2026-04-09 03:49:08] [sim] # clkgen_virtex7: virtex-7 sdram/pci clock generator, version 1
+[2026-04-09 03:49:08] [sim] # clkgen_virtex7: Frequency 100000 KHz, DCM divisor 16/32
+[2026-04-09 03:49:08] [sim] # [TRACER] Output filename is: trace_hart_0.log
+[2026-04-09 03:50:28] [sim] # ESP-Ariane boot loader
+[2026-04-09 03:50:28] [sim] # 
+[2026-04-09 03:50:48] [sim] # Scanning device tree... 
+[2026-04-09 03:58:46] [sim] # [probe] sld,lstm_rtl.0 registered
+[2026-04-09 03:59:06] [sim] # 		Address   : 0x60010000
+[2026-04-09 03:59:26] [sim] # 		Interrupt : 6
+[2026-04-09 03:59:46] [sim] # **************** sld,lstm_rtl.0 ****************
+[2026-04-09 04:00:26] [sim] #   memory buffer base-address = 0xa01036c0
+[2026-04-09 04:00:46] [sim] #   ptable = 0xa0106640
+[2026-04-09 04:00:46] [sim] #   nchunk = 1
+[2026-04-09 04:01:06] [sim] #   --------------------
+[2026-04-09 04:01:26] [sim] #   Generate input...
+[2026-04-09 04:03:46] [sim] # 	-> Non-coherent DMA
+[2026-04-09 04:11:44] [sim] # [probe] sld,llc_cache.0 registered
+[2026-04-09 04:12:04] [sim] # 		Address   : 0x6000e000
+[2026-04-09 04:12:24] [sim] # 		Interrupt : 12
+[2026-04-09 04:21:03] [sim] # [probe] sld,l2_cache.0 registered
+[2026-04-09 04:21:03] [sim] # 		Address   : 0x6000d000
+[2026-04-09 04:21:22] [sim] # 		Interrupt : 12
+[2026-04-09 04:24:42] [sim] #   Start...
+[2026-04-09 04:27:21] [sim] #   Done
+[2026-04-09 04:27:21] [sim] #   Monitor stats:
+[2026-04-09 04:27:41] [sim] # 
+[2026-04-09 04:28:01] [sim] # ***************************************************
+[2026-04-09 04:28:41] [sim] # ******************ESP MONITOR STATS****************
+[2026-04-09 04:29:21] [sim] # ***************************************************
+[2026-04-09 04:29:21] [sim] # 
+[2026-04-09 04:29:41] [sim] # ********************MEMORY STATS*******************
+[2026-04-09 04:30:21] [sim] # Off-chip memory accesses at mem tile 0: 15824
+[2026-04-09 04:30:41] [sim] # Coherence requests to LLC 0: 174
+[2026-04-09 04:31:01] [sim] # Coherence forwards from LLC 0: 0
+[2026-04-09 04:31:21] [sim] # Coherence responses received by LLC 0: 0
+[2026-04-09 04:32:01] [sim] # Coherence responses sent by LLC 0: 352
+[2026-04-09 04:32:21] [sim] # DMA requests to mem tile 0: 4105
+[2026-04-09 04:32:40] [sim] # DMA responses from mem tile 0: 2716
+[2026-04-09 04:33:00] [sim] # Coherent DMA requests to LLC 0: 0
+[2026-04-09 04:33:20] [sim] # Coherent DMA responses from LLC 0: 0
+[2026-04-09 04:33:20] [sim] # 
+[2026-04-09 04:34:00] [sim] # ********************CACHE STATS********************
+[2026-04-09 04:34:00] [sim] # 
+[2026-04-09 04:34:40] [sim] # ****************ACCELERATOR STATS******************
+[2026-04-09 04:35:00] [sim] # Accelerator 0 TLB-loading cycles: 21
+[2026-04-09 04:35:20] [sim] # Accelerator 0 mem cycles: 7922
+[2026-04-09 04:35:40] [sim] # Accelerator 0 total cycles: 8015
+[2026-04-09 04:36:00] [sim] # Accelerator 0 invocations: 1
+[2026-04-09 04:36:00] [sim] # 
+[2026-04-09 04:36:40] [sim] # *********************DVFS STATS********************
+[2026-04-09 04:36:40] [sim] # 
+[2026-04-09 04:37:20] [sim] # *********************NOC STATS*********************
+[2026-04-09 04:37:20] [sim] #   validating...
+[2026-04-09 04:37:24] [sim] #   ... PASS
+[2026-04-09 04:37:24] [sim] # ** Failure: Program Completed!
+[2026-04-09 04:37:24] [sim] #    Time: 16768200 ns  Iteration: 0  Process: /testbench/top_1/line__223 File: /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/top.vhd
+[2026-04-09 04:37:24] [sim] # Break in Process line__223 at /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/top.vhd line 226
+[2026-04-09 04:37:24] [sim] # Stopped at /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/top.vhd line 226
+[2026-04-09 04:37:25] [sim] # End time: 04:37:24 on Apr 09,2026, Elapsed time: 0:48:42
+[2026-04-09 04:37:25] [sim] # Errors: 1, Warnings: 0, Suppressed Warnings: 1
+[2026-04-09 04:37:25] END sim: returncode=0
+[2026-04-09 04:37:25] END candidate passed=True cycles=8015 offchip_memory_accesses=15824 resource_score=20.507499999999997

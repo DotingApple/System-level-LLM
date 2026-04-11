@@ -1,0 +1,21 @@
+Reflect on the latest ESP run result.
+
+Summarize whether the change helped, hurt, or was inconclusive.
+Ground the reflection in monitor metrics first: cycles, mem cycles, TLB-loading cycles, invocations, coherence traffic, DMA traffic, and off-chip memory accesses.
+Compare the latest result against baseline and current best when those references are available.
+Treat static resource metrics as secondary context unless the run explicitly included per-iteration synthesis or implementation.
+Decide whether the next step should broaden, contract, or shift search direction.
+If a change produced no improvement, say whether the next proposal should be more aggressive.
+If a change looks too aggressive or harmful, say how the next proposal should become more conservative.
+Mention any plateau signals you observe and use them to justify the next search move.
+If a parameter family has now produced repeated neutral runs with essentially unchanged cycles, mem cycles, DMA traffic, and off-chip accesses, explicitly say that this family looks insensitive and should be deprioritized.
+
+Be explicit about which optimization intent the evidence now supports:
+- latency
+- area/resource relief
+- noc/communication relief
+
+Prefer latency as the default optimization intent unless the user explicitly asked for area/resources or recent failures point to implementation pressure.
+If the result suggests a latency bottleneck, say which of CONFIG_QUEUE_SIZE, CONFIG_ACC_CACHES, CONFIG_SLM_KBYTES, CONFIG_COH_NOC_WIDTH, CONFIG_DMA_NOC_WIDTH, or CONFIG_MEM_LINK_WIDTH should be explored next.
+If the result suggests area or implementation pressure, say whether CONFIG_CPU_CACHES, CONFIG_ACC_CACHES, CONFIG_SLM_KBYTES, or CONFIG_QUEUE_SIZE should be reduced, but only if the evidence really supports that shift.
+If the result suggests NoC pressure, say whether CONFIG_COH_NOC_WIDTH, CONFIG_DMA_NOC_WIDTH, CONFIG_MEM_LINK_WIDTH, or CONFIG_QUEUE_SIZE should be adjusted next.

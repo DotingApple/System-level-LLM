@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_SLM_KBYTES": "128"
+  },
+  "rationale": "Pursuing area/resource relief. The accelerator runtime is extremely short (63 cycles) and memory dominated (34 memory cycles). Reducing SLM capacity from 256KB to 128KB should decrease BRAM utilization without degrading performance, as the dataset for AES is likely small.",
+  "search_intent": "Shrink SLM to reduce BRAM usage and improve resource score."
+}

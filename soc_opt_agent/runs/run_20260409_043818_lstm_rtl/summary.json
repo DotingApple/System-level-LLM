@@ -1,0 +1,38 @@
+{
+  "accelerator_name": "lstm_rtl",
+  "benchmark_exe": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/lstm_rtl.exe",
+  "cycles_improvement_vs_baseline": 0.0,
+  "cycles_improvement_vs_best": 0.0,
+  "metrics": {
+    "accelerator_invocations": 1,
+    "accelerator_mem_cycles": 7922,
+    "accelerator_tlb_loading_cycles": 21,
+    "accelerator_total_cycles": 8015,
+    "bram_utilization": 18.2,
+    "coherence_forwards_from_llc": 0,
+    "coherence_requests_to_llc": 174,
+    "coherence_responses_received_by_llc": 0,
+    "coherence_responses_sent_by_llc": 352,
+    "coherent_dma_requests_to_llc": 0,
+    "coherent_dma_responses_from_llc": 0,
+    "dma_requests_to_mem": 4105,
+    "dma_responses_from_mem": 2716,
+    "dsp_utilization": 0.96,
+    "ff_utilization": 18.89,
+    "lut_utilization": 43.98,
+    "offchip_memory_accesses": 15824,
+    "passed": true,
+    "resource_score": 20.507499999999997
+  },
+  "mode": "candidate",
+  "proposal": {
+    "changes": {
+      "CONFIG_CPU_CACHES": "1024 8 2048 16"
+    },
+    "rationale": "Since queue, SLM, and accelerator cache capacities repeatedly showed no impact on the 7922 memory cycles, and NoC/memory link widths are already at their maximum supported values of 64, we infer these families are currently insensitive or maxed out. We switch to the CPU cache family, increasing CONFIG_CPU_CACHES to reduce CPU-induced memory traffic. This aims to alleviate memory link contention, allowing faster DMA responses for the accelerator and thereby lowering accelerator_mem_cycles.",
+    "search_intent": "latency"
+  },
+  "resource_improvement_vs_baseline": 0.0,
+  "resource_improvement_vs_best": 0.0,
+  "resource_score": 20.507499999999997
+}

@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_QUEUE_SIZE": "16"
+  },
+  "rationale": "The accelerator is heavily memory-bound, with memory cycles (7922) accounting for nearly 99% of the total cycles (8015). Increasing CONFIG_QUEUE_SIZE to 16 allows more in-flight memory requests, improving latency hiding and concurrency, which should lower accelerator_mem_cycles.",
+  "search_intent": "latency"
+}

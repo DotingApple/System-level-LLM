@@ -1,0 +1,8 @@
+{
+  "changes": {
+    "CONFIG_ACC_CACHES": "1024 8",
+    "CONFIG_QUEUE_SIZE": "8"
+  },
+  "rationale": "Pursuing latency improvement. Previous attempts to reduce area yielded no resource score improvements, and reducing NoC widths caused an execution failure. Shifting focus to performance: out of the 63 total cycles, 34 are memory cycles and 21 are TLB loading cycles, alongside 184 off-chip memory accesses. Increasing CONFIG_ACC_CACHES to 1024 sets with 8-way associativity and expanding CONFIG_QUEUE_SIZE to 8 aims to absorb these accesses and reduce TLB and memory latency.",
+  "search_intent": "Increase accelerator caches and queue size to reduce memory cycles and off-chip accesses."
+}

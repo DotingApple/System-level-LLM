@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_CPU_CACHES": "1024 4 2048 8"
+  },
+  "rationale": "Pursuing noc/communication relief. Previous attempts to reduce area yielded no resource score improvements, and shrinking CPU caches slightly increased off-chip memory accesses from 184 to 186. Since expanding accelerator caches did not affect the off-chip accesses, they likely originate from the CPU side. Boldly expanding CONFIG_CPU_CACHES to '1024 4 2048 8' tests the hypothesis that a significantly larger CPU cache capacity will absorb more data and instruction fetches, thereby reducing off-chip memory accesses and overall memory transport pressure.",
+  "search_intent": "Significantly increase CPU caches to absorb fetches and reduce off-chip memory accesses."
+}

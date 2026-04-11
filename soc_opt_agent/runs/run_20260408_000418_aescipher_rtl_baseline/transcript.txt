@@ -1,0 +1,563 @@
+# vsim "+UVM_NO_RELNOTES" "+permissive-off" -voptargs="+acc" -suppress 3812 -suppress 2697 -suppress 8617 -suppress 151 -suppress 143 -suppress 8386 -suppress 3009,2685,2718 -L secureip_ver -L unisims_ver -uvmcontrol=disable -t fs "+notimingchecks" testbench glbl -c -do "do /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/vsim.tcl" 
+# Start time: 00:05:08 on Apr 08,2026
+# //  ModelSim DE 2023.2 Apr 11 2023 Linux 4.18.0-553.63.1.el8_10.x86_64
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim DE and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.esp_global
+# Loading work.config_types
+# Loading work.config
+# Loading work.version
+# Loading work.stdlib(body)
+# Loading work.gencomp
+# Loading work.sld_devices
+# Loading work.amba(body)
+# Loading work.uart
+# Loading work.libdcom(body)
+# Loading work.stdio(body)
+# Loading work.devices
+# Loading work.sim(body)
+# Loading work.grlib_config
+# Loading work.coretypes
+# Loading work.leon3
+# Loading work.misc(body)
+# Loading work.net
+# Loading work.svga_pkg
+# Loading work.genacc
+# Loading work.esp_acc_regmap(body)
+# Loading work.monitor_pkg
+# Loading work.nocpackage(body)
+# Loading work.allcaches
+# Loading work.cachepackage(body)
+# Loading work.sldacc
+# Loading work.esp_noc_csr_pkg
+# Loading work.tile
+# Loading work.socmap
+# Loading work.esp_csr_pkg
+# Loading work.tiles_pkg
+# Loading work.testbench(behav)
+# Loading sv_std.std
+# Loading work.glbl
+# Loading work.top(rtl)
+# Loading work.allpads
+# Loading work.outpad(rtl)
+# Loading work.unisim_outpad(rtl)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading unisim.vpkg(body)
+# Loading unisim.obuf(obuf_v)
+# Loading work.iopad(rtl)
+# Loading work.unisim_iopad(rtl)
+# Loading unisim.iobuf(iobuf_v)
+# Loading work.inpad(rtl)
+# Loading work.unisim_inpad(rtl)
+# Loading unisim.ibuf(ibuf_v)
+# Loading work.rstgen(rtl)
+# Loading work.allclkgen
+# Loading work.clkgen(struct)
+# Loading work.clkgen_virtex7(struct)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading unisim.plle2_adv(plle2_adv_v)
+# Loading unisim.bufg(bufg_v)
+# Loading work.report_version(beh)
+# Loading work.ahbram_sim(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.tiles_fpga_pkg
+# Loading work.esp(rtl)
+# Loading work.jtag_pkg
+# Loading ieee.std_logic_textio(body)
+# Loading work.dvfs(body)
+# Loading work.noc_domain_socket(rtl)
+# Loading work.noc32_synchronizers(rtl)
+# Loading work.genram_pkg(body)
+# Loading work.inferred_async_fifo(syn)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.sync_noc_set(mesh)
+# Loading work.sync_noc_xy(mesh)
+# Loading work.router(behavior)
+# Loading work.noc
+# Loading work.lookahead_router_wrapper
+# Loading work.lookahead_router
+# Loading work.router_fifo
+# Loading work.lookahead_routing
+# Loading work.router_arbiter
+# Loading work.noc5_mux(rtl)
+# Loading work.fifo0(behavior)
+# Loading work.esp_noc_csr(rtl)
+# Loading work.noc2apb(rtl)
+# Loading work.fpga_tile_mem(rtl)
+# Loading work.ariane_esp_pkg
+# Loading work.jtag_test(rtl)
+# Loading work.tile_mem(rtl)
+# Loading ieee.math_real(body)
+# Loading work.testlib(body)
+# Loading work.ahbctrl(rtl)
+# Loading work.esp_tile_csr(rtl)
+# Loading work.noc2ahbmst(rtl)
+# Loading work.gencaches
+# Loading work.llc_wrapper(rtl)
+# Loading work.llc(mapping)
+# Loading work.llc_rtl_top_sv_unit
+# Loading work.llc_rtl_top
+# Loading work.llc_interface_defs_sv_unit
+# Loading work.llc_req_in_t
+# Loading work.llc_dma_req_in_t
+# Loading work.llc_rsp_in_t
+# Loading work.llc_mem_rsp_t
+# Loading work.llc_rsp_out_t
+# Loading work.llc_dma_rsp_out_t
+# Loading work.llc_fwd_out_t
+# Loading work.llc_mem_req_t
+# Loading work.llc_core_sv_unit
+# Loading work.llc_core
+# Loading work.line_breakdown_llc_t
+# Loading work.llc_regs_sv_unit
+# Loading work.llc_regs
+# Loading work.llc_input_decoder_sv_unit
+# Loading work.llc_input_decoder
+# Loading work.llc_interfaces_sv_unit
+# Loading work.llc_interfaces
+# Loading work.interface_controller_sv_unit
+# Loading work.interface_controller
+# Loading work.llc_localmem_sv_unit
+# Loading work.llc_localmem
+# Loading work.llc_update_sv_unit
+# Loading work.llc_update
+# Loading work.llc_bufs_sv_unit
+# Loading work.llc_bufs
+# Loading work.llc_lookup_way_sv_unit
+# Loading work.llc_lookup_way
+# Loading work.pri_enc
+# Loading work.pri_enc_half
+# Loading work.llc_process_request_sv_unit
+# Loading work.llc_process_request
+# Loading work.BRAM_4096x4
+# Loading unisims_ver.RAMB16_S4_S4
+# Loading unisims_ver.RAMB18E1
+# Loading work.BRAM_1024x16
+# Loading unisims_ver.RAMB16_S18_S18
+# Loading work.BRAM_16384x1
+# Loading unisims_ver.RAMB16_S1_S1
+# Loading work.BRAM_2048x8
+# Loading unisims_ver.RAMB16_S9_S9
+# Loading unisims_ver.RB18_INTERNAL_VLOG
+# Loading work.mem_tile_q(rtl)
+# Loading work.fifo2(behavior)
+# Loading work.fpga_tile_cpu(rtl)
+# Loading work.ibex_esp_pkg
+# Loading work.tile_cpu(rtl)
+# Loading work.ariane_axi_wrap(rtl)
+# Loading work.axi_pkg
+# Loading work.ariane_soc
+# Loading work.ariane_axi
+# Loading work.riscv
+# Loading work.dm
+# Loading work.ariane_pkg
+# Loading work.ariane_wrap
+# Loading work.axi_node_wrap_with_slices
+# Loading work.axi_node_intf_wrap
+# Loading work.axi_node
+# Loading work.ariane_sv_unit
+# Loading work.ariane
+# Loading work.frontend_sv_unit
+# Loading work.frontend
+# Loading work.instr_realign_sv_unit
+# Loading work.instr_realign
+# Loading work.ras
+# Loading work.btb
+# Loading work.bht
+# Loading work.instr_queue
+# Loading work.lzc
+# Loading work.popcount
+# Loading work.fifo_v3
+# Loading work.id_stage
+# Loading work.compressed_decoder_sv_unit
+# Loading work.compressed_decoder
+# Loading work.decoder_sv_unit
+# Loading work.decoder
+# Loading work.issue_stage_sv_unit
+# Loading work.issue_stage
+# Loading work.re_name_sv_unit
+# Loading work.re_name
+# Loading work.scoreboard
+# Loading work.rr_arb_tree
+# Loading work.issue_read_operands_sv_unit
+# Loading work.issue_read_operands
+# Loading work.ariane_regfile
+# Loading work.ex_stage_sv_unit
+# Loading work.ex_stage
+# Loading work.alu_sv_unit
+# Loading work.alu
+# Loading work.branch_unit
+# Loading work.csr_buffer_sv_unit
+# Loading work.csr_buffer
+# Loading work.mult_sv_unit
+# Loading work.mult
+# Loading work.multiplier_sv_unit
+# Loading work.multiplier
+# Loading work.serdiv_sv_unit
+# Loading work.serdiv
+# Loading work.load_store_unit_sv_unit
+# Loading work.load_store_unit
+# Loading work.mmu_sv_unit
+# Loading work.mmu
+# Loading work.tlb_sv_unit
+# Loading work.tlb
+# Loading work.ptw_sv_unit
+# Loading work.ptw
+# Loading work.store_unit_sv_unit
+# Loading work.store_unit
+# Loading work.store_buffer_sv_unit
+# Loading work.store_buffer
+# Loading work.amo_buffer
+# Loading work.load_unit
+# Loading work.shift_reg
+# Loading work.lsu_bypass
+# Loading work.commit_stage_sv_unit
+# Loading work.commit_stage
+# Loading work.csr_regfile_sv_unit
+# Loading work.csr_regfile
+# Loading work.perf_counters_sv_unit
+# Loading work.perf_counters
+# Loading work.controller_sv_unit
+# Loading work.controller
+# Loading work.wt_cache_pkg
+# Loading work.wt_cache_subsystem_sv_unit
+# Loading work.wt_cache_subsystem
+# Loading work.wt_icache_sv_unit
+# Loading work.wt_icache
+# Loading work.lfsr_8bit
+# Loading work.wt_dcache_sv_unit
+# Loading work.wt_dcache
+# Loading work.wt_dcache_missunit_sv_unit
+# Loading work.wt_dcache_missunit
+# Loading work.exp_backoff
+# Loading work.wt_dcache_wbuffer_sv_unit
+# Loading work.wt_dcache_wbuffer
+# Loading work.wt_dcache_inval_sv_unit
+# Loading work.wt_dcache_inval
+# Loading work.wt_dcache_mem_sv_unit
+# Loading work.wt_dcache_mem
+# Loading work.wt_axi_adapter_sv_unit
+# Loading work.wt_axi_adapter
+# Loading work.std_cache_pkg
+# Loading work.axi_shim_sv_unit
+# Loading work.axi_shim
+# Loading work.instr_tracer_if
+# Loading work.instr_tracer_pkg
+# Loading work.instr_tracer_sv_unit
+# Loading work.instr_tracer
+# Loading work.axi_master_connect
+# Loading work.axi2apb_64_32
+# Loading work.axi_aw_buffer
+# Loading work.axi_single_slice
+# Loading work.fifo
+# Loading work.fifo_v2
+# Loading work.axi_ar_buffer
+# Loading work.axi_w_buffer
+# Loading work.axi_r_buffer
+# Loading work.axi_b_buffer
+# Loading work.axi_intf_sv_unit
+# Loading work.AXI_BUS
+# Loading work.axi_riscv_atomics_wrap
+# Loading work.axi_riscv_atomics
+# Loading work.axi_riscv_amos
+# Loading work.axi_riscv_amos_alu
+# Loading work.axi_riscv_lrsc
+# Loading work.axi_res_tbl
+# Loading work.stream_arbiter
+# Loading work.stream_arbiter_flushable
+# Loading work.instr_scan
+# Loading work.fpnew_pkg
+# Loading work.fpu_wrap_sv_unit
+# Loading work.fpu_wrap
+# Loading work.sram
+# Loading work.wt_dcache_ctrl_sv_unit
+# Loading work.wt_dcache_ctrl
+# Loading work.fpnew_top
+# Loading work.SyncSpRamBeNx64
+# Loading work.fpnew_opgroup_block
+# Loading work.axi_multicut_sv_unit
+# Loading work.axi_multicut
+# Loading work.fpnew_opgroup_fmt_slice
+# Loading work.fpnew_opgroup_multifmt_slice
+# Loading work.fpnew_fma
+# Loading work.fpnew_classifier
+# Loading work.fpnew_rounding
+# Loading work.fpnew_divsqrt_multi
+# Loading work.defs_div_sqrt_mvp
+# Loading work.div_sqrt_top_mvp_sv_unit
+# Loading work.div_sqrt_top_mvp
+# Loading work.preprocess_mvp_sv_unit
+# Loading work.preprocess_mvp
+# Loading work.nrbd_nrsc_mvp_sv_unit
+# Loading work.nrbd_nrsc_mvp
+# Loading work.control_mvp_sv_unit
+# Loading work.control_mvp
+# Loading work.norm_div_sqrt_mvp_sv_unit
+# Loading work.norm_div_sqrt_mvp
+# Loading work.fpnew_noncomp
+# Loading work.fpnew_cast_multi
+# Loading work.axi_cut_sv_unit
+# Loading work.axi_cut
+# Loading work.spill_register
+# Loading work.axi_intf_bind_slv_sv_unit
+# Loading work.axi_intf_bind_slv
+# Loading work.axi_intf_bind_mst_sv_unit
+# Loading work.axi_intf_bind_mst
+# Loading work.iteration_div_sqrt_mvp
+# Loading work.axi_request_block
+# Loading work.axi_AR_allocator
+# Loading work.axi_node_arbiter
+# Loading work.axi_AW_allocator
+# Loading work.axi_DW_allocator
+# Loading work.axi_multiplexer
+# Loading work.axi_address_decoder_BW
+# Loading work.axi_address_decoder_BR
+# Loading work.axi_response_block
+# Loading work.axi_BW_allocator
+# Loading work.axi_BR_allocator
+# Loading work.axi_address_decoder_AR
+# Loading work.axi_address_decoder_AW
+# Loading work.axi_address_decoder_DW
+# Loading work.unread(dummy)
+# Loading work.l2_wrapper(rtl)
+# Loading work.l2(mapping)
+# Loading work.l2_rtl_top_sv_unit
+# Loading work.l2_rtl_top
+# Loading work.l2_interface_defs_sv_unit
+# Loading work.l2_cpu_req_t
+# Loading work.l2_fwd_in_t
+# Loading work.l2_rsp_in_t
+# Loading work.l2_req_out_t
+# Loading work.l2_rsp_out_t
+# Loading work.l2_rd_rsp_t
+# Loading work.l2_inval_t
+# Loading work.l2_core_sv_unit
+# Loading work.l2_core
+# Loading work.line_breakdown_l2_t
+# Loading work.addr_breakdown_t
+# Loading work.l2_bufs_sv_unit
+# Loading work.l2_bufs
+# Loading work.l2_fsm_sv_unit
+# Loading work.l2_fsm
+# Loading work.l2_interfaces_sv_unit
+# Loading work.l2_interfaces
+# Loading work.l2_input_decoder_sv_unit
+# Loading work.l2_input_decoder
+# Loading work.l2_localmem_sv_unit
+# Loading work.l2_localmem
+# Loading work.l2_lookup_sv_unit
+# Loading work.l2_lookup
+# Loading work.l2_regs_sv_unit
+# Loading work.l2_regs
+# Loading work.l2_reqs_sv_unit
+# Loading work.l2_reqs
+# Loading work.l2_write_word_sv_unit
+# Loading work.l2_write_word
+# Loading work.BRAM_8192x2
+# Loading unisims_ver.RAMB16_S2_S2
+# Loading work.fifo_custom(behavior)
+# Loading work.axislv2noc(rtl)
+# Loading work.apb2noc(rtl)
+# Loading work.intack2noc(rtl)
+# Loading work.cpu_tile_q(rtl)
+# Loading work.fpga_tile_acc(rtl)
+# Loading work.tile_acc(rtl)
+# Loading work.noc_aescipher_rtl(rtl)
+# Loading work.allacc
+# Loading work.aescipher_rtl_rtl(mapping)
+# Loading work.aescipher_rtl_basic_dma64
+# Loading work.aescipher
+# Loading work.keyExpansion
+# Loading work.sbox
+# Loading work.rounds
+# Loading work.subbytes
+# Loading work.shiftrow
+# Loading work.mixcolumn
+# Loading work.rounndlast
+# Loading work.esp_acc_dma(rtl)
+# Loading work.esp_acc_tlb(tlb)
+# Loading work.allmem
+# Loading work.syncram(rtl)
+# Loading work.unisim_syncram(behav)
+# Loading work.generic_syncram(behavioral)
+# Loading work.acc_tile_q(rtl)
+# Loading work.fpga_tile_io(rtl)
+# Loading work.gptimer_pkg
+# Loading work.tile_io(rtl)
+# Loading work.patient_apbctrl(rtl)
+# Loading work.grethpkg(body)
+# Loading work.esp_init(rtl)
+# Loading work.eth_edcl_ahb_mst(rtl)
+# Loading work.apbuart(rtl)
+# Loading work.riscv_plic_apb_wrap(rtl)
+# Loading work.reg_intf
+# Loading work.riscv_plic_wrap
+# Loading work.REG_BUS
+# Loading work.apb_to_reg
+# Loading work.plic_top
+# Loading work.rv_plic_gateway
+# Loading work.plic_regs
+# Loading work.rv_plic_target
+# Loading work.riscv_clint_ahb_wrap(rtl)
+# Loading work.ahb2axi_l(rtl)
+# Loading work.riscv_clint_wrap
+# Loading work.clint
+# Loading work.axi_lite_interface
+# Loading work.clint_sync_wedge
+# Loading work.clint_sync
+# Loading work.esplink
+# Loading work.ahbslv2noc(rtl)
+# Loading work.intreq2noc(rtl)
+# Loading work.noc2intreq(rtl)
+# Loading work.misc_tile_q(rtl)
+# do /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/vsim.tcl
+# ahbctrl: AHB arbiter/multiplexer rev 1
+# ahbctrl: Common I/O area at 0xfff00000, 1 Mbyte
+# ahbctrl: AHB masters: 4, AHB slaves: 32
+# ahbctrl: Configuration area disabled
+# ahbctrl: mst2: Columbia University SLD bus-master proxy               
+# ahbctrl: mst3: Columbia University SLD ESP self init module           
+# ahbctrl: slv0: Cobham Gaisler          Single-port AHB SRAM module    
+# ahbctrl:       memory at 0x00000000, size 1 Mbyte, cacheable, prefetch
+# ahbctrl: slv1: Cobham Gaisler          AHB/APB Bridge                 
+# ahbctrl:       memory at 0x60000000, size 256 Mbyte
+# ahbctrl: slv2: SiFive                  RISC-V CPU Local Interruptor   
+# ahbctrl:       memory at 0x02000000, size 1 Mbyte
+# ahbctrl: slv4: Cobham Gaisler          Xilinx MIG DDR3 Controller     
+# ahbctrl:       memory at 0x80000000, size 1024 Mbyte, cacheable, prefetch
+# ahbctrl: AHB arbiter/multiplexer rev 1
+# ahbctrl: Common I/O area at 0xfff00000, 1 Mbyte
+# ahbctrl: AHB masters: 32, AHB slaves: 32
+# ahbctrl: Configuration area disabled
+# ahbctrl: mst0: Columbia University SLD bus-master proxy               
+# ahbctrl: mst1: Columbia University SLD bus-master proxy               
+# ahbctrl: mst2: Columbia University SLD LLC cache                      
+# ahbctrl: slv0: Cobham Gaisler          Xilinx MIG DDR3 Controller     
+# ahbctrl:       memory at 0x80000000, size 1024 Mbyte, cacheable, prefetch
+# apbctrl: APB Bridge at 0x60000000 rev 1
+# apbctrl: slv0: Columbia University SLD ESP tile ctrl & stats          
+# apbctrl:       I/O ports at 0x60090600, size 512 byte 
+# apbctrl: slv1: Cobham Gaisler          Generic UART                   
+# apbctrl:       I/O ports at 0x60000100, size 256 byte 
+# apbctrl: slv2: SiFive                  Platform Level Int. Controller 
+# apbctrl:       I/O ports at 0x6c000000, size 65536 kbyte
+# apbctrl: slv3: Cobham Gaisler          Modular Timer Unit             
+# apbctrl:       I/O ports at 0x60000300, size 256 byte 
+# apbctrl: slv4: Columbia University SLD ESP SoC Link                   
+# apbctrl:       I/O ports at 0x60000400, size 256 byte 
+# apbctrl: slv6: Cobham Gaisler          GR Ethernet MAC                
+# apbctrl:       I/O ports at 0x60080000, size 64 kbyte
+# apbctrl: slv7: Cobham Gaisler          XILINX SGMII Interface         
+# apbctrl:       I/O ports at 0x60001000, size 4 kbyte
+# apbctrl: slv8: Columbia University SLD L2 cache                       
+# apbctrl:       I/O ports at 0x6000d000, size 256 byte 
+# apbctrl: slv24: Columbia University SLD LLC cache                      
+# apbctrl:       I/O ports at 0x6000e000, size 256 byte 
+# apbctrl: slv40: Columbia University SLD ESP tile ctrl & stats          
+# apbctrl:       I/O ports at 0x60090000, size 512 byte 
+# apbctrl: slv41: Columbia University SLD ESP tile ctrl & stats          
+# apbctrl:       I/O ports at 0x60090200, size 512 byte 
+# apbctrl: slv42: Columbia University SLD ESP tile ctrl & stats          
+# apbctrl:       I/O ports at 0x60090400, size 512 byte 
+# apbctrl: slv296: Columbia University SLD Accelerator AESCIPHER          
+# apbctrl:       I/O ports at 0x60010000, size 512 byte 
+# apbuart1: Generic UART rev 1, fifo 32, irq 2, scaler bits 12
+# ahbram0: AHB SRAM Module rev 1, 128 kbytes
+# ahbram0: AHB SRAM Module rev 1, 2048 kbytes
+# clkgen_virtex7: virtex-7 sdram/pci clock generator, version 1
+# clkgen_virtex7: Frequency 100000 KHz, DCM divisor 16/32
+# [TRACER] Output filename is: trace_hart_0.log
+# ESP-Ariane boot loader
+# 
+# Scanning device tree... 
+# [probe] sld,aescipher_rtl.0 registered
+# 		Address   : 0x60010000
+# 		Interrupt : 6
+# **************** sld,aescipher_rtl.0 ****************
+#   memory buffer base-address = 0xa0103650
+#   ptable = 0xa0103690
+#   nchunk = 1
+#   --------------------
+#   Generate input...
+#   Set input block:
+#     in0 = 0x0011223344556677
+#     in1 = 0x8899aabbccddeeff
+#     key0 = 0x01020304
+#     key1 = 0x05060708
+#     key2 = 0x090a0b0c
+#     key3 = 0x0d0e0f10
+#     key4 = 0x11121314
+#     key5 = 0x15161718
+#     key6 = 0x191a1b1c
+#     key7 = 0x1d1e1f00
+# 
+#   Input blocks (each block = 2 tokens => 128 bits)
+#   Block 0:
+#     in0 = 0x0011223344556677
+#     in1 = 0x8899aabbccddeeff
+# 	-> Non-coherent DMA
+# [probe] sld,llc_cache.0 registered
+# 		Address   : 0x6000e000
+# 		Interrupt : 12
+# [probe] sld,l2_cache.0 registered
+# 		Address   : 0x6000d000
+# 		Interrupt : 12
+#   Start...
+#   Done
+#   Monitor stats:
+# 
+# ***************************************************
+# ******************ESP MONITOR STATS****************
+# ***************************************************
+# 
+# ********************MEMORY STATS*******************
+# Off-chip memory accesses at mem tile 0: 184
+# Coherence requests to LLC 0: 178
+# Coherence forwards from LLC 0: 0
+# Coherence responses received by LLC 0: 0
+# Coherence responses sent by LLC 0: 360
+# DMA requests to mem tile 0: 11
+# DMA responses from mem tile 0: 5
+# Coherent DMA requests to LLC 0: 0
+# Coherent DMA responses from LLC 0: 0
+# 
+# ********************CACHE STATS********************
+# 
+# ****************ACCELERATOR STATS******************
+# Accelerator 0 TLB-loading cycles: 21
+# Accelerator 0 mem cycles: 34
+# Accelerator 0 total cycles: 63
+# Accelerator 0 invocations: 1
+# 
+# *********************DVFS STATS********************
+# 
+# *********************NOC STATS*********************
+#   validating...
+# 
+#   Accelerator output blocks:
+# out[0] = 0
+# out[1] = 0
+#   ... PASS
+# ** Failure: Program Completed!
+#    Time: 17617840 ns  Iteration: 0  Process: /testbench/top_1/line__223 File: /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/top.vhd
+# Break in Process line__223 at /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/top.vhd line 226
+# Stopped at /home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/top.vhd line 226
+# End time: 00:42:21 on Apr 08,2026, Elapsed time: 0:37:13
+# Errors: 1, Warnings: 0, Suppressed Warnings: 1

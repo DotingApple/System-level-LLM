@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_CPU_CACHES": "256 4 512 8"
+  },
+  "rationale": "Pursuing area/resource relief. Since previous attempts to shrink accelerator-specific resources (SLM and ACC_CACHES) did not yield noticeable resource score improvements, the dominant resource consumer is likely the CPU caches. Halving the CPU L1 and L2 caches should substantially reduce BRAM and LUT utilization without heavily impacting the very short 63-cycle execution latency.",
+  "search_intent": "Shrink CPU caches to reduce BRAM and LUT utilization."
+}

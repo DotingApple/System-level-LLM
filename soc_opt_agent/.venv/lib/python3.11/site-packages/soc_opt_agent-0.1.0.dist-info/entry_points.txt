@@ -1,0 +1,3 @@
+[console_scripts]
+agentrtl = soc_opt_agent.cli:main_agentrtl
+agentsoc = soc_opt_agent.cli:main

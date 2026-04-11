@@ -1,0 +1,44 @@
+Suggest the next ESP configuration to try.
+
+You will be given the current config, monitor metrics, and recent results. Return a structured, JSON-like object with exactly these fields:
+- changes
+- rationale
+- search_intent
+
+If baseline_metrics, best_metrics, last_metrics, or recent_attempts are provided, use them explicitly.
+Treat monitor-derived fields such as total cycles, mem cycles, TLB-loading cycles, invocations, LLC coherence traffic, DMA traffic, and off-chip memory accesses as the strongest evidence for where the bottleneck is.
+Treat static resource fields as informational only unless the context explicitly says they came from per-iteration synthesis or implementation.
+Use recent_attempts to avoid repeating already-failed or already-neutral directions.
+The default search objective is latency improvement, not area reduction.
+
+Map optimization intent to parameter families explicitly:
+- For latency improvement, consider CONFIG_QUEUE_SIZE, CONFIG_ACC_CACHES, CONFIG_SLM_KBYTES, CONFIG_COH_NOC_WIDTH, CONFIG_DMA_NOC_WIDTH, and CONFIG_MEM_LINK_WIDTH first.
+- For area or implementation-pressure relief, consider reducing CONFIG_CPU_CACHES, CONFIG_ACC_CACHES, CONFIG_SLM_KBYTES, or CONFIG_QUEUE_SIZE first.
+- For NoC or communication bottlenecks, focus on CONFIG_COH_NOC_WIDTH, CONFIG_DMA_NOC_WIDTH, CONFIG_MEM_LINK_WIDTH, and CONFIG_QUEUE_SIZE first.
+
+Use the monitor metrics to choose among those families:
+- If accelerator_mem_cycles or off-chip memory accesses dominate, prefer memory-system or local-storage changes before unrelated tweaks.
+- If DMA or coherence traffic is high, prefer NoC- and transport-related changes before cache-size guesses.
+- If repeated resource or compile failures occur, shift toward area-relief changes instead of pushing larger structures again.
+- If repeated attempts change config values but leave cycles, mem cycles, DMA traffic, and off-chip accesses effectively unchanged, infer that the tested parameter family is likely insensitive for this workload and switch families.
+
+Choose a proposal that meaningfully explores the search space.
+If recent iterations show little or no improvement, prefer a bolder move instead of a tiny local tweak.
+Single-parameter changes are allowed and can be large if they test an important hypothesis.
+If recent results suggest a prior move may have been too conservative, increase step size.
+If recent results suggest a prior move may have overshot, propose a smaller follow-up move that contracts around the promising region.
+In early and middle search, you may change a small combination of parameters when the combination reflects one coherent hypothesis.
+Do not repeat near-duplicate weak trials unless the history shows a clear reason to revisit them.
+If compatibility limits are provided, do not propose values outside them.
+If a recent failure reason is provided, avoid repeating the invalid direction that caused it.
+Do not recommend area/resource relief as the primary intent unless the user explicitly asked for it or the recent history shows clear implementation/resource failures.
+If the workload is short and recent monitor statistics are stable, avoid more cache-size or queue-size nudges unless you can justify why this attempt is materially different.
+Keep the change set focused, explain why it is worth trying, and describe the search intent in one short sentence.
+
+In the rationale, explicitly say which optimization intent you are pursuing:
+- latency
+- area/resource relief
+- noc/communication relief
+
+Then explain why the selected parameters are the right ones for that intent.
+When the intent is latency, explicitly tie the proposal to the specific monitor fields you expect to change.

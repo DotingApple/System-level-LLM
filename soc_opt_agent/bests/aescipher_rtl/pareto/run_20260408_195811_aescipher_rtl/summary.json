@@ -1,0 +1,38 @@
+{
+  "accelerator_name": "aescipher_rtl",
+  "benchmark_exe": "/home/cz2931/esp/socs/xilinx-vc707-xc7vx485t/soft-build/ariane/baremetal/aescipher_rtl.exe",
+  "cycles_improvement_vs_baseline": 0.0,
+  "cycles_improvement_vs_best": 0.0,
+  "metrics": {
+    "accelerator_invocations": 1,
+    "accelerator_mem_cycles": 34,
+    "accelerator_tlb_loading_cycles": 21,
+    "accelerator_total_cycles": 63,
+    "bram_utilization": 18.2,
+    "coherence_forwards_from_llc": 0,
+    "coherence_requests_to_llc": 178,
+    "coherence_responses_received_by_llc": 0,
+    "coherence_responses_sent_by_llc": 360,
+    "coherent_dma_requests_to_llc": 0,
+    "coherent_dma_responses_from_llc": 0,
+    "dma_requests_to_mem": 11,
+    "dma_responses_from_mem": 5,
+    "dsp_utilization": 0.96,
+    "ff_utilization": 18.89,
+    "lut_utilization": 43.98,
+    "offchip_memory_accesses": 184,
+    "passed": true,
+    "resource_score": 20.507499999999997
+  },
+  "mode": "candidate",
+  "proposal": {
+    "changes": {
+      "CONFIG_QUEUE_SIZE": "2"
+    },
+    "rationale": "Pursuing area/resource relief. Previous attempts to reduce LUT and BRAM utilization by shrinking accelerator caches, SLM capacity, and CPU caches either showed no resource improvement or resulted in execution failures. Aggressively shrinking CONFIG_QUEUE_SIZE from 8 to 2 targets the NoC request concurrency and hardware buffering logic, which may directly reduce LUT and FF utilization without impacting the already ultra-low 63-cycle execution latency.",
+    "search_intent": "Aggressively reduce queue size to lower buffering and LUT utilization."
+  },
+  "resource_improvement_vs_baseline": 0.0,
+  "resource_improvement_vs_best": 0.0,
+  "resource_score": 20.507499999999997
+}

@@ -1,0 +1,7 @@
+{
+  "changes": {
+    "CONFIG_SLM_KBYTES": "1024"
+  },
+  "rationale": "Increasing CONFIG_QUEUE_SIZE had no impact on memory cycles, suggesting request concurrency is not the limiting factor. The accelerator is deeply memory-bound (memory cycles account for 99% of total cycles) and generates significant DMA traffic. Increasing CONFIG_SLM_KBYTES from 256 to 1024 provides more local storage, which may allow the accelerator to buffer larger tiles, reducing off-chip memory accesses and lowering accelerator_mem_cycles.",
+  "search_intent": "latency"
+}

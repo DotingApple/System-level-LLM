@@ -1,0 +1,8 @@
+{
+  "changes": {
+    "CONFIG_ACC_CACHES": "256 4",
+    "CONFIG_QUEUE_SIZE": "2"
+  },
+  "rationale": "Pursuing area/resource relief. The total execution time is extremely short at 63 cycles (with 34 memory cycles), indicating that large buffers and caches are drastically over-provisioned. Shrinking CONFIG_ACC_CACHES from 512 to 256 sets and reducing CONFIG_QUEUE_SIZE from 4 to 2 targets the relatively high LUT (43.98%) and BRAM (18.2%) utilization, which should improve the resource score without impacting latency.",
+  "search_intent": "Shrink accelerator caches and queue size to relieve area and resource pressure."
+}

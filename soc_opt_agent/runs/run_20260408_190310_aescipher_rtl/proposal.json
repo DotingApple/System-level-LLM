@@ -1,0 +1,8 @@
+{
+  "changes": {
+    "CONFIG_DMA_NOC_WIDTH": "32",
+    "CONFIG_MEM_LINK_WIDTH": "32"
+  },
+  "rationale": "Pursuing area/resource relief. Previous attempts to shrink accelerator caches, CPU caches, SLM capacity, and queue size did not reduce the 18.2% BRAM or 43.98% LUT utilization. Reducing the DMA NoC width and memory link width from 64 to 32 targets the routing and multiplexing logic of the NoC, which should lower LUT utilization without significantly impacting the extremely short 63-cycle execution latency.",
+  "search_intent": "Reduce DMA NoC and memory link widths to lower NoC-related LUT utilization."
+}

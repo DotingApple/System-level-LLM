@@ -1,0 +1,10 @@
+accelerator_order:
+  - lstm_rtl
+allowed_keys:
+  - CONFIG_QUEUE_SIZE
+  - CONFIG_COH_NOC_WIDTH
+  - CONFIG_DMA_NOC_WIDTH
+  - CONFIG_MEM_LINK_WIDTH
+  - CONFIG_SLM_KBYTES
+  - CONFIG_CPU_CACHES
+  - CONFIG_ACC_CACHES
