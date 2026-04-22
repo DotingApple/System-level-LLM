@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="lstm_v2" desc="Accelerator LSTM_V2" data_size="33" device_id="032" hls_tool="rtl">
+    <param name="num_timesteps" desc="num_timesteps" />
+    <param name="hidden_dim" desc="hidden_dim" />
+    <param name="in_dim" desc="in_dim" />
+  </accelerator>
+</sld>
